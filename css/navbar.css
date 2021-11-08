@@ -1,0 +1,34 @@
+.Navbar{
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 110px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent;
+    z-index: 999;
+}
+
+.Navbar_logo{
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    background-image: url('../images/odinvpn-logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:center;
+}
+
+@media (max-width: 767px) { 
+
+    .Navbar{
+
+        padding: 0 20px;
+    }
+
+
+
+}

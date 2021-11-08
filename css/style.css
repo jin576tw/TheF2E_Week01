@@ -1,0 +1,935 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth; /* 平滑滾動 */
+}
+
+body{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    line-height: 2; 
+    
+  
+}
+
+:root {
+    font-size: 10px;
+    scroll-behavior: smooth; /* 平滑滾動 */
+    --deep_blue: #232c6b;
+    --dark_blue: #0b1e4c;
+    --coral:#fb6565;
+     /* --light_blue: rgba(0, 165, 255, 0.85); */
+ 
+
+}
+
+ body a{
+    color:inherit;
+ }
+
+ body a:hover {
+    color:inherit;
+    text-decoration: none;
+}
+ 
+
+p {
+    font-size: 1.8rem;
+    margin: 0px;
+    padding: 0;
+}
+
+
+
+ul {
+    color:inherit;
+    text-decoration:none;
+    margin-bottom: 0;
+}
+
+li{
+    color:inherit;
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+}
+
+
+img{
+    width: 100%;
+}
+
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+input:focus {
+    outline: none;
+}
+
+label{
+    margin: 0;
+}
+
+
+
+
+@media (max-width: 767px) { }
+
+@media (max-width: 1025px) { }
+
+
+.animate__animated.animate__flash {
+    --animate-duration: 2.5s;
+}
+
+
+.bounce {
+    animation: bounce 2s ease infinite;
+
+}
+@keyframes bounce {
+    0%,   100% {transform: translateY(0);}
+    30% {transform: translateY(-10px);}
+    70% {transform: translateY(-12px);}
+}
+
+
+/* ////////////// Banner///////////////////////*/
+
+.Banner{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark_blue);
+    background-image: url('../images/bg01.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 200px;
+    display: flex;
+    justify-content:center;
+    align-items: flex-start
+}
+
+
+.Banner_content{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+   
+
+
+}
+
+.Banner_title{
+
+    
+    color: white;
+    text-align: center;
+}
+
+.Banner_title h1{
+
+    font-size: 4rem;
+}
+.Banner_title h2{
+
+    font-size: 2rem;
+}
+ 
+
+.Banner_userVpn_warp{
+   
+    color: white;
+    text-align: center;
+    margin-top: 60px;
+    width: 60%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+   
+    
+    
+}
+
+.Banner_userVpn_outline{
+
+    width: 30%;
+    height: 0%;
+    overflow: hidden;
+    border-top: 0.2px solid white;
+    border-bottom: 0.2px solid white;
+    transform: translateY(80px);
+    
+}
+
+.Banner_userVpn_warp h3{
+
+    margin-top: 40px;
+    font-size: 2.6rem;
+}
+
+.userVpn_detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+   
+}
+
+.userVpn_detail h4{
+    margin-top: 2px;
+    font-size: 2.4rem;
+    font-weight: 400;
+
+}
+.userVpn_detail h5{
+
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 8px 10px;
+
+}
+
+.copy_icon{
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: var(--coral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    cursor:pointer
+}
+
+.contactUs_btn{
+    margin-top: 80px;
+   
+    width: 210px;
+    height: 48px;
+    border-radius: 44.5px;
+    background-color: var(--coral);
+    color: white;
+    font-size: 1.6rem;
+}
+.learnMore_btn{
+
+    margin-top: 15px;
+    width: 210px;
+    height: 48px;
+    border-radius: 44.5px;
+    border: 1px solid var(--coral);
+    background-color: transparent;
+    color: var(--coral);
+    font-size: 1.6rem;
+}
+
+.learnMore_btn:hover{
+    transition: 0.3s;
+    color: white;
+    background-color:  var(--coral);
+    border: 1px solid transparent;
+
+
+}
+
+@media (max-width: 1025px) { 
+
+
+    .Banner{
+
+        height: 800px;
+
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .Banner{
+        width: 100%;
+        height: 100vh;
+        background-color: var(--dark_blue);
+        background-image: url('../images/bg01.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center bottom;
+        padding-top: 180px;
+        display: flex;
+        justify-content:center;
+        align-items: flex-start
+    }
+    
+
+
+    .Banner_title h1{
+
+        font-size: 3.2rem;
+    }
+
+    .Banner_title h2{
+
+        margin-top: 20px;
+        font-size: 1.3rem;
+    }
+
+    .Banner_userVpn_warp{
+       margin-top: 40px;
+        width: 80%;
+       
+        
+    }
+
+    .Banner_userVpn_warp h3{
+
+
+        font-size: 2rem;
+    }
+
+
+
+ }
+
+
+ /* /////////////////介紹優點/////////////////// */
+ .Intro{
+    width: 100%;
+    background-color: var(--dark_blue);
+    padding-bottom: 120px;
+    overflow: hidden;
+    
+ }
+
+
+ .Intro_title{
+
+    color:white;
+    text-align: center;
+   
+ }
+ .Intro_title h1{
+
+   font-size: 4rem;
+   margin-bottom: 120px;
+ }
+
+ .Intro_box_warp{
+     width: 100%;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    margin-bottom: 105px;
+    
+ }
+
+
+ .Intro_box{
+     position: relative;
+     width: 40%;
+     height: 380px;
+     border-radius: 20px;
+     background-image: linear-gradient(to bottom, #4abee4, #2489c5);
+     margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 160px;
+    color: white;
+ }
+ 
+
+ .Intro_box_img{
+    position: absolute;
+    min-width: 250px;
+    height: 160px;
+    /* background-color: red; */
+    top:-30px;
+
+ }
+
+ .Intro_box_img img{
+     height: 100%;
+     object-fit: contain;
+ }
+
+
+ .Intro_box p{
+
+    margin-top: 15px;
+    width: 85%;
+
+
+ }
+
+ @media (max-width: 767px) { 
+
+    .Intro{
+        width: 100%;
+        background-color: var(--dark_blue);
+        padding-bottom: 20px;
+        
+     }
+
+     .Intro_title h1{
+        
+        font-size: 3.2rem;
+        margin-bottom: 40px;
+        transform: translateX(20px);
+    }
+
+
+    .Intro_box_warp{
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 105px;
+
+       flex-direction: column;
+       
+    }
+
+
+    
+    .Intro_box{
+
+        width: 90%;
+        margin: 40px 0px 60px 0px;
+    }
+
+
+ }
+
+
+
+ /* 優點比較 */
+
+ .Table{
+     width: 100%;
+     /* height: 100vh; */
+     background-image: linear-gradient(to top, #005e8c, #237eb4 10%);
+     padding-top: 120px;
+    
+
+ }
+
+ .Table_warp{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding-bottom: 120px;
+ }
+
+ .Table_title{
+     text-align: center;
+     color: white;
+     margin-bottom: 80px;
+
+ }
+
+.Table_title h1{
+
+
+    font-size: 4rem;
+}
+
+.Table_pic{
+    width: 90%;
+    min-height: 400px;
+
+    background-image: url('../images/table@2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (max-width: 767px) { 
+
+
+    .Table{
+      
+        padding-top: 120px;
+       
+   
+    }
+
+
+    .Table_title{
+        text-align: center;
+        color: white;
+        margin-bottom: 60px;
+   
+    }
+   
+
+    .Table_title h1{
+        font-size: 3.2rem;
+    }
+
+
+    .Table_pic{
+        width: 90%;
+        min-height: 300px;
+        background-image: url('../images/table-m@2.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+}
+
+/* //////////////////更多特色////////// */
+
+.More_intro{
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--deep_blue);
+    background-image: url('../images/bg02.png');
+    background-size: contain;
+    background-position:  center bottom;
+    background-repeat: no-repeat;
+    padding-top: 120px;
+    padding-bottom: 250px;
+}
+
+.More_intro_warp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white
+}
+
+.More_intro_title h1{
+    text-align: center;
+    font-size: 4rem;
+
+}
+
+.More_intro_content{
+    margin-top: 80px;
+    width: 100%;
+}
+
+.More_intro_box{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 80px;
+
+}
+
+.More_intro_pic{
+    width: 30%;
+    height: 380px;
+    display: flex;
+    border-radius: 20px;
+    
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+
+.More_intro_pic img{
+    height: 100%;
+    object-fit: contain;
+
+}
+
+#introPic02{
+    transform:  scale(1.3);
+}
+
+#introVideo{
+    background-color: white
+}
+
+#introVideo video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  
+}
+
+
+.More_intro_text{
+    width: 30%;
+    
+}
+
+.More_intro_text p{
+
+    margin: 20px 0;
+}
+
+@media (max-width: 767px) {
+
+    .More_intro{
+
+        width: 100%;
+        background-color: var(--deep_blue);
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+    .More_intro_title h1{
+
+        font-size: 3.2rem;
+        
+    }
+
+    
+ 
+
+    .More_intro_box{
+       
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 80px;
+    
+    }
+
+    #intro01{
+        display: flex;
+
+        flex-direction: column-reverse;
+
+    }
+
+
+    .More_intro_content{
+        margin-top: 25px;
+        width: 100%;
+    }
+
+
+
+    .More_intro_pic{
+        width: 70%;
+        height: 300px;
+       
+    
+    }
+
+    .More_intro_text{
+        margin-top: 50px;
+        width: 90%
+        
+    }
+
+
+    .learnMore_btn{
+
+        position: relative;
+        transform: translate(-50%,-50%);
+        margin-top: 40px;
+        left: 50%;
+    }
+ 
+ }
+
+
+/* 使用畫面 */
+
+.Demo{
+    position: relative;
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    color: white;
+    background-image: linear-gradient(to top, #232c6b, #237eb4 90%);
+
+}
+
+.Demo_title h1{
+    text-align: center;
+    font-size: 4rem;
+
+}
+
+
+.Demo_content{
+    margin-top: 80px;
+}
+
+
+.remoteDesktop_intro{
+    margin-top: 120px;
+    text-align: center;
+}
+
+.remoteDesktop_intro h2{
+
+    margin: 0 auto;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.remoteDesktop_intro h3{
+
+    margin: 0 auto;
+    font-size: 1.8rem;
+
+}
+
+.remoteDesktop_demo{
+    margin-top: 60px;
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.ImgRock{
+    position: absolute;
+    width:240px;
+    height: 240px;
+    /* background-color: red; */
+    background-image: url('../images/0000.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+#Rock01{
+    right: 0;
+    transform: rotate(-30deg);
+}
+#Rock02{
+    right: 15%;
+    bottom: -250px;
+    transform: rotate(30deg);
+}
+#Rock03{
+    top: 45%;
+    left: 0;
+    transform: rotate(-30deg);
+}
+
+@media (max-width: 767px) {
+
+    .Demo{
+        /* overflow: hidden; */
+        width: 100%;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        color: white;
+        background-image: linear-gradient(to top, #232c6b, #237eb4 70%);
+    
+    }
+
+
+    .Demo_content{
+        margin-top: 60px;
+    }
+
+
+    .remoteDesktop_intro h3{
+        width: 90%;
+        margin: 0 auto;
+        font-size: 1.8rem;
+    
+    }
+
+    .remoteDesktop_demo{
+        margin: 60px auto 0 auto;
+        width: 90%;
+        height: 400px;
+        border-radius: 20px;
+        background-color: white;
+    }
+
+
+    .ImgRock{
+        position: absolute;
+        width:150px;
+        height: 150px;
+        /* background-color: red; */
+        background-image: url('../images/0000.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    
+    }
+    
+    #Rock01{
+        top: -10px;
+        right: 0;
+        transform: rotate(-30deg);
+    }
+    #Rock02{
+        right: 15%;
+        bottom: 0px;
+        transform: rotate(30deg);
+    }
+    #Rock03{
+        top: 47%;
+        left: 0;
+        transform: rotate(-30deg);
+    }
+
+}
+
+
+
+
+
+/* 聯絡專員 */
+.Contact{
+
+    width: 100%;
+    height: 160vh;
+    padding-top: 200px;
+    background-image: url('../images/bgunder.png');
+    background-repeat: no-repeat;
+    background-color:#232c6b;
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+}
+
+.Contact_warp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.Contact_title{
+    margin-top: 120px;
+}
+.Contact_title h1{
+    
+    text-align: center;
+    font-size: 4rem;
+
+}
+
+.Contact_title p{
+    
+    width: 60%;
+    margin: 40px auto 0 auto;
+    text-align: center
+}
+
+.TG_Pic{
+    position: relative;
+    border-radius: 20px;
+    margin-top: 60px;
+    width: 350px;
+    height: 350px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../images/QR.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+#contact{
+    position: absolute;
+    
+    bottom: -20px;
+}
+
+
+@media (max-width: 1025px) { 
+
+
+    .Demo{
+
+        width: 100%;
+        padding-top: 120px;
+        padding-bottom: 180px;
+        color: white;
+        background-image: linear-gradient(to top, #232c6b, #237eb4 90%);
+    
+    }
+
+
+    .Contact{
+
+        height: 1200px;
+        padding-top: 60px;
+
+
+    }
+
+    .Contact_title{
+        margin-top: 0px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .Contact{
+
+        width: 100%;
+        height: 100vh;
+        padding-top: 110px;
+        background-image: url('../images/bgunder.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+        color: white;
+    }
+
+    .Contact_title{
+        margin-top: 0px;
+    }
+
+
+    .Contact_title h1{
+
+        font-size: 3.2rem;
+        
+    }
+
+    .Contact_title p{
+    
+        width: 90%;
+        margin: 40px auto 0 auto;
+        text-align: center
+    }
+
+
+    .TG_Pic{
+    
+        width: 300px;
+        height: 300px;
+        
+    }
+    
+
+
+}
