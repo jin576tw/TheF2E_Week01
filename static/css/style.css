@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family:  'Noto Sans TC', sans-serif,'Noto Serif TC', serif;
     font-weight: 400;
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
@@ -14,7 +14,14 @@ body{
 :root {
     font-size: 10px;
 
-     /* --light_blue: rgba(0, 165, 255, 0.85); */
+    --vblack:#666666;
+    --vblue:#7BAEBE;
+    --vYellow:#E8CB89;
+    --light_blue :#A6CDE0;
+    --vOrange:#F8C3A1;
+    --vGrey: #B4B4B4;
+
+    
  
 
 }
@@ -73,6 +80,104 @@ label{
 }
 
 
+/* ////////////動畫//////////////////// */
+
+
+
 @media (max-width: 767px) { }
 
 @media (max-width: 1025px) { }
+
+
+.Content{
+    width: 100%;
+    overflow: hidden;
+}
+
+.Content_page{
+    min-width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Content_row{
+    display: flex;
+    transition: 0.8s;
+    /* transform: translateX(-100%); */
+}
+
+#Home_page{
+    background-image: url('../images/banner01.jpg');
+    
+}
+
+#Food_page{
+
+    background-image: url('../images/banner02.jpg');
+   
+
+}
+#Hotel_page{
+
+    background-image: url('../images/banner03.jpg');
+    
+
+}
+
+
+.MainLogo{
+    width: 567px;
+    height: 420px;
+    /* background-color: #afa; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.8s;
+
+}
+
+.HomeLogo{
+    background-image: url('../images/taiwan_logo_white.svg');
+    
+
+}
+.FoodLogo{
+    background-image: url('../images/taiwan_logo_black.svg');
+    opacity: 0;
+
+}
+.HotelLogo{
+    background-image: url('../images/taiwan_logo_black.svg');
+    background-size:cover;
+    opacity: 0;
+}
+
+
+@media (max-width: 767px) { 
+
+
+    .MainLogo{
+        width: 300px;
+        height: 231px;
+    }
+
+    #Food_page{
+
+        background-size: cover;
+        background-position:  center;
+       
+    
+    }
+
+    .HotelLogo{
+        background-size: cover;
+        background-position:  center;
+    }
+
+    
+
+
+}

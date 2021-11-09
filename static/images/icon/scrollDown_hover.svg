@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="92" viewBox="0 0 45 92">
+  <defs>
+    <clipPath id="clip-scrollDown_hover">
+      <rect width="45" height="92"/>
+    </clipPath>
+  </defs>
+  <g id="scrollDown_hover" clip-path="url(#clip-scrollDown_hover)">
+    <rect width="45" height="92" fill="#fff"/>
+    <path id="Union_1" data-name="Union 1" d="M9.769,64.364,4.884,70.471ZM0,64.364l4.884,6.106ZM4.884,0V0Z" transform="translate(18.116)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <g id="Ellipse_18" data-name="Ellipse 18" transform="translate(1.403 48)" fill="none" stroke="#e8cb89" stroke-width="1">
+      <circle cx="22" cy="22" r="22" stroke="none"/>
+      <circle cx="22" cy="22" r="21.5" fill="none"/>
+    </g>
+  </g>
+</svg>

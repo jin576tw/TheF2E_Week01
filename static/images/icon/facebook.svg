@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-facebook">
+      <rect width="30" height="30"/>
+    </clipPath>
+  </defs>
+  <g id="facebook" clip-path="url(#clip-facebook)">
+    <rect width="30" height="30" fill="#fff"/>
+    <g id="fb" transform="translate(-72 -704)">
+      <path id="social-facebook-circular" d="M121.59,100.373A14.974,14.974,0,1,0,126,111,14.535,14.535,0,0,0,121.59,100.373Zm-2.353,18.865a11.056,11.056,0,0,1-6.57,3.308v-8.213H116V111h-3.333v-2.333a1,1,0,0,1,1-1H116v-3.333h-2.328a4,4,0,0,0-3.095,1.37,4.8,4.8,0,0,0-1.243,3.347V111H106v3.333h3.333v8.217a11,11,0,0,1-6.595-3.307,11.682,11.682,0,1,1,16.5,0Z" transform="translate(-23 608)" fill="#7baebe"/>
+      <g id="Ellipse_20" data-name="Ellipse 20" transform="translate(71 703)" fill="none" stroke="#fff" stroke-width="4">
+        <circle cx="16.5" cy="16.5" r="16.5" stroke="none"/>
+        <circle cx="16.5" cy="16.5" r="14.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

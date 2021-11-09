@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-infomation">
+      <rect width="30" height="30"/>
+    </clipPath>
+  </defs>
+  <g id="infomation" clip-path="url(#clip-infomation)">
+    <rect width="30" height="30" fill="#fff"/>
+    <path id="information-solid" d="M.647,21.856A15,15,0,1,1,21.853.642l0,0A15,15,0,0,1,.643,21.852l0,0Zm9.1-9.1v6h3v-9h-3Zm0-9v3h3v-3Z" transform="translate(3.932 3.933)" fill="#7baebe"/>
+  </g>
+</svg>

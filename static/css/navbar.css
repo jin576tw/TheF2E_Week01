@@ -1,34 +1,238 @@
 .Navbar{
-
-    position: fixed;
-    top: 0;
     width: 100%;
-    height: 110px;
+    height: 75px;
     background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: transparent;
+    position: fixed;
+    top:0;
     z-index: 999;
+    overflow: hidden;
+    transition: 0.5s;
 }
-
-.Navbar_logo{
+.navbar_warp{
+    
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.navbarLogo{
     cursor: pointer;
-    width: 150px;
-    height: 30px;
-    background-image: url('../images/odinvpn-logo.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position:center;
+    
+} 
+
+.logoOut{
+
+    opacity: 0;
+    transition: 0.5s;
+}
+.navbarLogo h2{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 2.2rem;
+    color:white;
+    font-weight: 350px;
+    letter-spacing: 1.12px;
+}
+.navbarLogo h2:hover{
+
+    transition: 0.5s;
+    color:var(--vYellow)
+
 }
 
-@media (max-width: 767px) { 
 
-    .Navbar{
+.navbarItems{
+    display: flex;
+    margin-top: 4px;
+}
 
-        padding: 0 20px;
+.navbarItems li{
+    font-family:'Noto Sans TC', sans-serif;
+    font-size: 1.8rem;
+    margin: 0 35px;
+    font-weight: 380;
+    color: white;
+
+}
+
+.navbarItems li:hover{
+    transition: 0.5s;
+    color:var(--vYellow)
+
+}
+
+
+/* /////////////RWD按鈕/////////////// */
+.navbarRWD{
+    display: none;
+    width: 50px;
+   height: 38px;
+   margin-top: -3px;
+   position: relative;
+  
+}
+
+.menu_icon{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
+    
+}
+
+.icon_bar{
+	position: relative;
+	background: rgba(255, 255, 255, 1);
+	transition: all 0ms 300ms;
+}
+
+.icon_bar.animate {
+    background: rgba(255, 255, 255, 0);
+}
+
+.icon_bar,
+.icon_bar:after,
+.icon_bar:before {
+	width: 30px;
+	height: 2px;
+}
+
+.icon_bar:after,
+.icon_bar:before {
+	content: '';
+	position: absolute;
+	
+}
+
+.icon_bar:before {
+	left: 0;
+	bottom: 10px;
+	background: rgba(255, 255, 255, 1);
+	transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.icon_bar:after {
+	left: 0;
+	top: 10px;
+	background: rgba(255, 255, 255, 1);
+	transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.icon_bar.animate:after {
+	top: 0;
+	transform: rotate(45deg);
+	transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    background: var(--vblack)
+}
+
+.icon_bar.animate:before {
+	bottom: 0;
+	transform: rotate(-45deg);
+	transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    
+    background: var(--vblack)
+}
+
+.RWD_content{
+    opacity: 0;
+    transition: 0.3s;
+    width: 100%;
+    height: calc(100vh - 150px - 75px);
+    /* background-color:red;   */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    padding-top: 60px;
+}
+
+.RWD_content h3{
+
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.6rem;
+    color:var(--vblue);
+    font-weight: 350px;
+    letter-spacing: 1.12px;
+}
+
+.RWDItems {
+    margin-top: 30px;
+}
+
+.RWDItems li{
+    margin: 40px 0;
+    font-size: 1.6rem;
+    margin-right: 15px;
+    color: var(--vblack);
+}
+
+.shareBtn_warp{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin-top: 40px;
+
+}
+
+.shareBtn{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin: 0 15px;
+    background-color:cyan;
+}
+
+
+
+
+@media (max-width: 1025px) {
+
+    .navbarItems{
+        display: none;
     }
 
+    .navbarRWD{
+        display: block;
+    }
+
+    .navbarOpen{
+        transition: 0.8s;
+        height: calc(100vh - 300px);
+        background-color: white;
+
+    }
+
+ }
+
+@media (max-width: 767px) {
 
 
-}
+    .navbarItems{
+        display: none;
+    }
+
+    .navbarRWD{
+        display: block;
+    }
+
+    .navbarOpen{
+        transition: 0.8s;
+        height: calc(100vh - 150px);
+        background-color: white;
+
+    }
+
+    
+    
+
+
+
+  
+
+
+
+ }
+
+
