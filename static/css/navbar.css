@@ -22,11 +22,11 @@
     
 } 
 
-.logoOut{
-
+.navLogoOut{
     opacity: 0;
     transition: 0.5s;
 }
+
 .navbarLogo h2{
     font-family: 'Noto Serif TC', serif;
     font-size: 2.2rem;
@@ -56,11 +56,11 @@
 
 }
 
-.navbarItems li:hover{
+/* .navbarItems li:hover{
     transition: 0.5s;
     color:var(--vYellow)
 
-}
+} */
 
 
 /* /////////////RWD按鈕/////////////// */
@@ -89,9 +89,7 @@
 	transition: all 0ms 300ms;
 }
 
-.icon_bar.animate {
-    background: rgba(255, 255, 255, 0);
-}
+
 
 .icon_bar,
 .icon_bar:after,
@@ -114,11 +112,16 @@
 	transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+
 .icon_bar:after {
 	left: 0;
 	top: 10px;
 	background: rgba(255, 255, 255, 1);
 	transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.icon_bar.animate {
+    background: rgba(255, 255, 255, 0) !important;
 }
 
 .icon_bar.animate:after {
@@ -132,13 +135,31 @@
 	bottom: 0;
 	transform: rotate(-45deg);
 	transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
-    
     background: var(--vblack)
 }
 
+
+
+.icon_bar.dark:before{
+
+    background: var(--vblack)
+
+}
+.icon_bar.dark::after{
+
+    background: var(--vblack)
+
+}
+.icon_bar.dark{
+
+
+    background: var(--vblack)
+
+} 
+
 .RWD_content{
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.2s;
     width: 100%;
     height: calc(100vh - 150px - 75px);
     /* background-color:red;   */
@@ -149,7 +170,7 @@
 }
 
 .RWD_content h3{
-
+    position: relative;
     font-family: 'Noto Serif TC', serif;
     font-size: 1.6rem;
     color:var(--vblue);
@@ -157,8 +178,24 @@
     letter-spacing: 1.12px;
 }
 
+.RWD_content h3::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 160%;
+    height: 40px;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    background-image: url('../images/icon/navbarLineForMobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
 .RWDItems {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .RWDItems li{

@@ -100,8 +100,8 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    
+    filter: brightness(88%);
 }
 .Content_row{
     display: flex;
@@ -111,18 +111,29 @@ label{
 
 #Home_page{
     background-image: url('../images/banner01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    
     
 }
 
 #Food_page{
 
     background-image: url('../images/banner02.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
    
 
 }
 #Hotel_page{
 
     background-image: url('../images/banner03.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     
 
 }
@@ -131,28 +142,41 @@ label{
 .MainLogo{
     width: 567px;
     height: 420px;
-    /* background-color: #afa; */
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: 0.8s;
+   
 
 }
 
 .HomeLogo{
     background-image: url('../images/taiwan_logo_white.svg');
-    
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+   
 
 }
 .FoodLogo{
     background-image: url('../images/taiwan_logo_black.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: sepia(100%);
     opacity: 0;
 
 }
 .HotelLogo{
     background-image: url('../images/taiwan_logo_black.svg');
-    background-size:cover;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: sepia(100%);
     opacity: 0;
+}
+
+.logoIN{
+    transition: 0.8s;
+    opacity: 1;
+
 }
 
 
@@ -162,19 +186,8 @@ label{
     .MainLogo{
         width: 300px;
         height: 231px;
-    }
-
-    #Food_page{
-
-        background-size: cover;
-        background-position:  center;
-       
-    
-    }
-
-    .HotelLogo{
-        background-size: cover;
-        background-position:  center;
+        margin-top: -60px;
+        /* background-color: red; */
     }
 
     
