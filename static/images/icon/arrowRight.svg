@@ -5,9 +5,10 @@
     </clipPath>
   </defs>
   <g id="arrowRight" clip-path="url(#clip-arrowRight)">
-    <rect width="30" height="30" fill="#fff"/>
-    <g id="arrow_L" data-name="arrow L" transform="translate(8.5 1.5)">
-      <path id="Union_3" data-name="Union 3" d="M0,13.305,12.631,0ZM13,27,.369,13.694Z" transform="translate(13 27) rotate(180)" fill="none" stroke="#7baebe" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <g id="Group_2" data-name="Group 2" transform="translate(8.5 1.5)">
+      <g id="arrow_L" data-name="arrow L">
+        <path id="Union_3" data-name="Union 3" d="M-2035.18-457.681l-12.631,13.3Zm-13-13.7,12.631,13.306Z" transform="translate(2048.18 471.376)" fill="none" stroke="#7baebe" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
     </g>
   </g>
 </svg>
