@@ -9,6 +9,7 @@ body{
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
     line-height: 2; 
+ 
 }
 
 :root {
@@ -86,6 +87,7 @@ select{
     -moz-appearance:none;
     -webkit-appearance:none;
 
+    background-color: #EBEBEB !important;
     background: url("../images/icon/slideMenuArrow.svg") no-repeat scroll right 5% center  transparent;
     background-size: 18px;
 }
@@ -106,43 +108,51 @@ select{
     overflow: hidden;
 }
 
-.Content_page{
-    min-width: 100%;
+.HOME_Size{
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    
-    padding-top: 200px;
-    filter: brightness(92%);
 }
+
 .Content_row{
     display: flex;
     transition: 0.8s;
     /* transform: translateX(-100%); */
 }
 
-#Home_page{
+.Content_page{
+    min-width: 100%;
+    
+}
+
+.Content_Header{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    filter: brightness(92%);
+    
+}
+
+#Home_Header{
     background-image: url('../images/banner01.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
-    
-    
 }
 
-#Food_page{
+
+#Food_Header{
 
     background-image: url('../images/banner02.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-   
 
 }
-#Hotel_page{
+
+
+#Hotel_Header{
 
     background-image: url('../images/banner03.jpg');
     background-repeat: no-repeat;
@@ -154,6 +164,7 @@ select{
 
 
 .MainLogo{
+    margin-top: 150px;
     width: 567px;
     height: 420px;
    
@@ -194,16 +205,13 @@ select{
 }
 
 
+
 @media (max-width: 767px) { 
 
-    .Content_page{
-        
-        padding-top: 220px;
-        
-    }
 
 
     .MainLogo{
+        margin-top: 220px;
         width: 300px;
         height: 231px;
         /* background-color: red; */
@@ -221,7 +229,7 @@ select{
     align-items: center;
     width: 50%;
     padding: 30px 15px;
-    max-width: 768px;
+    /* max-width: 768px; */
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 4px 8px #0000004B;
@@ -237,14 +245,15 @@ select{
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    /* background-color: red; */
     
     
 }
 
 .searchBar select{
     position: relative;
-    
-    width: 250px;
+    width: 80%;
+    max-width: 250px;
     height: 50px;
     margin-right: 20px;
     background-color: #EBEBEB !important;
@@ -278,33 +287,15 @@ select{
     font-family: 'Noto Serif TC', serif;
 }
 
-@media (max-width: 1025px) { 
 
-    .searchBar{
-
-        width: 80%;
-
-    }
-
-    .searchBar select{
-        width: 200px;
-        height: 50px;
-       
-    
-    }
-
-}
-@media (max-width: 767px) {
-
-
+@media (max-width: 1025px) {
 
     .searchBar{
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        width: 90%;
-        padding: 20px 10px 30px 10px;
+        width: 80%;
+        padding: 30px 15px;
         max-width: 768px;
         background-color: white;
         border-radius: 15px;
@@ -315,27 +306,121 @@ select{
     }
 
     .search_input{
+        width: 70%;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: center;
+
+        
+        
+    }
+    
+
+ }
+
+@media (max-width: 767px) {
+
+
+    .searchBar{
+        
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        padding: 15px 15px 30px 15px;
+      
+    
+    
     }
 
+    .search_input{
+        width: 100%;
+        flex-direction: column;
+        
     
+        
+    }
+
 
     .searchBar select{
+       
+        
         width: 100%;
-        height: 50px;
         margin-right: 0px;
         margin-bottom: 15px;
-        background-color: #EBEBEB;
-        border: transparent;
-        border-radius: 10px;
-        font-size: 1.6rem;  
-        padding: 0 10px;
-        font-weight: 350;
+      
+    
+    
+        
+    
     
     }
+    
+
+
 }
 
 
+/* ///////////////景點查詢頁////////////////*/
+
+.TravelPage{
+    padding-top: 75px;
+    width: 100%;
+}
+
+.TravelPage_header{
+
+    width: 100%;
+    height: 150px;
+    background-image: url('../images/Banner04.jpg');
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.pageNav{
+    width: 100%;
+    /* height: 50px; */
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+
+    /* background-color: cyan; */
+}
+
+.pageNav_item{
+    position: relative;
+    margin-right: 30px;
+    color: var(--vblack);
+}
+.pageNav_item h4{
+    font-size: 1.6rem;
+   
+
+}
+
+.pageNav_item::after{
+
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    right: -25px;
+    top: 0;
+    background-image: url('../images/icon/right-arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.pageNav_item:last-child{
+    color: var(--light_blue);
+}
+
+.pageNav_item:last-child::after{
+
+    background-image: none
+
+}

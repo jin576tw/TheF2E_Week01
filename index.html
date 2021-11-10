@@ -18,9 +18,12 @@
 	<!-- fontawesome -->
      <script src="https://kit.fontawesome.com/78ff172cd0.js" crossorigin="anonymous"></script>
 
+    <!-- css -->
     <link rel="stylesheet" href="./static/css/style.css" />
     <link rel="stylesheet" href="./static/css/navbar.css" />
     <link rel="stylesheet" href="./static/css/footer.css" />
+    <!-- <link rel="stylesheet" href="./static/css/TravelPage.css" /> -->
+
 
     <!-- GoogleFont -->
     <!-- 思源宋體 -->
@@ -45,62 +48,88 @@
 
 
 
-    <div class="Content">
+    <div class="Content HOME_Size">
 
         <div class="Content_row">
+
+            <!-- 旅遊情報首頁 -->
             <section class="Content_page" id="Home_page">
 
-                <div class="MainLogo HomeLogo logoIN" ></div>
-                
-                <div class="searchBar">
+                <div class="Content_Header" id="Home_Header">
 
-                    <div class="search_input">
+                    
+                    <div class="MainLogo HomeLogo logoIN" ></div>
 
-                        <label>
-                            <select id="region">
-                                <option value="">北部地區</option>
-                                <option value="">北部地區</option>
-                                <option value="">北部地區</option>
-                            </select>
-                        </label>
-                
+                    <div class="searchBar">
+                        
+                        <div class="search_input">
 
-            
-                        <label>
-                            <select id="city">
-                                <option value="">選擇城市</option>
-                                <option value="">選擇城市</option>
-                                <option value="">選擇城市</option>
-                            </select>
-                        </label>
-                 
-
-                       
-
-                    </div>
-
-                    <button class="search_btn">SEARCH</button>
+                   
+                                <select id="region">
+                                    <option value="">北部地區</option>
+                                    <option value="">北部地區</option>
+                                    <option value="">北部地區</option>
+                                </select>
+                     
                     
 
+                
+                                <select id="city">
+                                    <option value="">選擇城市</option>
+                                    <option value="">選擇城市</option>
+                                    <option value="">選擇城市</option>
+                                </select>
+                     
+                    
 
+                        
+
+                        </div>
+
+                        <button class="search_btn">SEARCH</button>
+
+                    </div>
+                
+                
+                </div>
+
+    
+
+            </section>
+
+            <!-- 景點查詢頁  -->
+            <section class="Content_page" id="Travel_page"></section>
+
+             <!--美食推薦頁 -->
+            <section class="Content_page" id="Food_page">
+
+                <div class="Content_Header" id="Food_Header">
+
+                    <div class="MainLogo FoodLogo" ></div>
 
                 </div>
 
             </section>
-            <!-- <section class="Content_page" id="Travel_page"></section> -->
-            <section class="Content_page" id="Food_page">
 
-                <div class="MainLogo FoodLogo" ></div>
 
-            </section>
-
+            <!-- 旅遊資訊頁  -->
             <section class="Content_page" id="Hotel_page">
 
-                <div class="MainLogo HotelLogo" ></div>
+                <div class="Content_Header" id="Hotel_Header">
 
+                    <div class="MainLogo HotelLogo" ></div>
+
+
+                </div>
+                
             </section>
 
+           
+
         </div>
+
+
+       
        
 
 
@@ -130,9 +159,10 @@
 <script>
 
 
-
+    $('#Travel_page').load('TravelPage.html')    
     $('#navbar').load('navbar.html')
     $('#footer').load('footer.html')    
+    
 
    
 
