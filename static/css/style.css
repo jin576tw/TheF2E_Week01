@@ -336,6 +336,7 @@ select{
     .search_input{
         width: 100%;
         flex-direction: column;
+     
         
     
         
@@ -346,6 +347,7 @@ select{
        
         
         width: 100%;
+        max-width: 300px;
         margin-right: 0px;
         margin-bottom: 15px;
       
