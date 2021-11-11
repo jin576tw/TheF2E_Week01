@@ -67,7 +67,7 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
 })
 
 // 首頁
-$('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.navbarLogo').click(function(){
+$('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2)').click(function(){
 
 
 
