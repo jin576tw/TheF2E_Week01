@@ -33,7 +33,7 @@ let indexNum = 1
 let maxlength = $('.hotViewBox:first').children('.hotView_pic').length
 
 // 電腦版
-if($(window).width() > 767){
+if($(window).width() > 768){
 
 
     $('.hotViewBox').each(function(){
