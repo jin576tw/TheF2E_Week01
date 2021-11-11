@@ -28,7 +28,7 @@ $('.navbarRWD').click(function(){
 
 
 
-// 旅遊情報首頁
+// 旅遊情報
 $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').click(function(){
 
 
@@ -66,7 +66,7 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
     
 })
 
-// 景點查詢
+// 首頁
 $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.navbarLogo').click(function(){
 
 
