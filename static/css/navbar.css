@@ -31,10 +31,10 @@
 }
 
 .navbarLogo h2{
-    font-family: 'Noto Serif TC', serif;
+    font-family: 'EB Garamond', serif;
     font-size: 2.2rem;
     color:white;
-    font-weight: 350px;
+    font-weight: 300px;
     letter-spacing: 1.12px;
 }
 .navbarLogo h2:hover{
@@ -47,7 +47,7 @@
 
 .navbarItems{
     display: flex;
-    margin-top: 4px;
+    margin-top: 5px;
 }
 
 .navbarItems li{
@@ -174,11 +174,12 @@
 
 .RWD_content h3{
     position: relative;
-    font-family: 'Noto Serif TC', serif;
+    font-family: 'EB Garamond', serif;
     font-size: 1.6rem;
     color:var(--vblue);
-    font-weight: 350px;
+    font-weight: 300px;
     letter-spacing: 1.12px;
+    transform: translateX(10px);
 }
 
 .RWD_content h3::after{

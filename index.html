@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="./static/css/footer.css" />
     <!-- <link rel="stylesheet" href="./static/css/TravelPage.css" /> -->
 
+    <!-- slick css-->
+    <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
+
 
     <!-- GoogleFont -->
     <!-- 思源宋體 -->
@@ -31,9 +35,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
 
+    <!-- 蘋方體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+
+    <!-- 英文字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
   
 
@@ -48,17 +59,17 @@
 
 
 
-    <div class="Content HOME_Size">
+    <div class="Content INDEX_Size">
 
         <div class="Content_row">
 
             <!-- 旅遊情報首頁 -->
-            <section class="Content_page" id="Home_page">
+            <section class="Content_page" id="Travel_page">
 
-                <div class="Content_Header" id="Home_Header">
+                <div class="Content_Header" id="Travel_Header">
 
                     
-                    <div class="MainLogo HomeLogo logoIN" ></div>
+                    <div class="MainLogo TravelLogo logoIN" ></div>
 
                     <div class="searchBar">
                         
@@ -98,7 +109,7 @@
             </section>
 
             <!-- 景點查詢頁  -->
-            <section class="Content_page" id="Travel_page"></section>
+            <section class="Content_page" id="Home_page"></section>
 
              <!--美食推薦頁 -->
             <section class="Content_page" id="Food_page">
@@ -153,13 +164,16 @@
 <!-- cookie -->
 <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
+<!-- slick js -->
+<script  src="./static/slick/slick.min.js"></script>
+
 <!-- js -->
 <script src="./static/js/common.js"></script>
 
 <script>
 
 
-    $('#Travel_page').load('TravelPage.html')    
+    $('#Home_page').load('HomePage.html')    
     $('#navbar').load('navbar.html')
     $('#footer').load('footer.html')    
     

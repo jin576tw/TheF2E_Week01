@@ -16,8 +16,8 @@ $('.navbarRWD').click(function(){
 
             $('.FoodLogo').addClass('logoIN')
             $('.HotelLogo').addClass('logoIN')
-            $('.HomeLogo').addClass('logoIN')
-        }, 600);
+            $('.TravelLogo').addClass('logoIN')
+        }, 550);
     }
 
 
@@ -32,10 +32,10 @@ $('.navbarRWD').click(function(){
 $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').click(function(){
 
 
-    nowPage = 'home'
+
     
-    console.log( nowPage);
-    $('.Content').addClass('HOME_Size')
+
+    $('.Content').addClass('INDEX_Size')
 
     $('.Content_row').css('transform','translateX(0%)')
     $('.navbarItems li').css('color','white').css('transition','0.5s')
@@ -52,7 +52,7 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
         setTimeout(() => {
         $('.FoodLogo').removeClass('logoIN')
         $('.HotelLogo').removeClass('logoIN')
-        $('.HomeLogo').addClass('logoIN')
+        $('.TravelLogo').addClass('logoIN')
         }, 600);
 
     }else{
@@ -69,9 +69,9 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
 // 景點查詢
 $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.navbarLogo').click(function(){
 
-    nowPage = 'travel'
 
-    $('.Content').removeClass('HOME_Size')
+
+    $('.Content').removeClass('INDEX_Size')
 
     $('.Content_row').css('transform','translateX(-100%)')
 
@@ -89,9 +89,9 @@ $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.navbarLogo').clic
 $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function(){
 
 
-    nowPage = 'food'
 
-    $('.Content').removeClass('HOME_Size')
+
+    $('.Content').removeClass('INDEX_Size')
 
     $('.Content_row').css('transform','translateX(-200%)')
     $('.navbarItems li').css('color','var(--vblack)').css('transition','0.5s')
@@ -107,7 +107,7 @@ $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function()
 
         setTimeout(() => {
 
-            $('.HomeLogo').removeClass('logoIN')
+            $('.TravelLogo').removeClass('logoIN')
             $('.HotelLogo').removeClass('logoIN')
             $('.FoodLogo').addClass('logoIN')
 
@@ -128,7 +128,7 @@ $('.navbarItems li:nth-of-type(4),.RWDItems li:nth-of-type(4)').click(function()
 
    nowPage = 'hotel'
 
-    $('.Content').removeClass('HOME_Size')
+    $('.Content').removeClass('INDEX_Size')
 
     $('.Content_row').css('transform','translateX(-300%)')
     $('.navbarItems li').css('color','var(--vblack)').css('transition','0.5s')
@@ -142,7 +142,7 @@ $('.navbarItems li:nth-of-type(4),.RWDItems li:nth-of-type(4)').click(function()
     if($(window).width() > 767){
         setTimeout(() => {
             
-            $('.HomeLogo').removeClass('logoIN')
+            $('.TravelLogo').removeClass('logoIN')
             $('.FoodLogo').removeClass('logoIN')
             $('.HotelLogo').addClass('logoIN')
 
