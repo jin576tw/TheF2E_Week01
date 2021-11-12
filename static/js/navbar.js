@@ -34,10 +34,7 @@ $('.navbarRWD').click(function(){
 $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').click(function(){
 
 
-
-    
-
-    $('.Content').addClass('INDEX_Size')
+    $('.Content').css('height','100vh')
 
     $('.Content_row').css('transform','translateX(0%)')
     $('.navbarItems li').css('color','white').css('transition','0.5s')
@@ -80,9 +77,7 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
 $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4').click(function(){
 
 
-    const Size = $('.HomePage').children('#footer').offset().top+50
-
-    $('.Content').removeClass('INDEX_Size')
+    const Size = $('.HomePage_warp').children('#footer').offset().top+50
 
     $('.Content').css('height',Size)
    
@@ -116,12 +111,11 @@ $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4')
 $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function(){
 
 
+
     const Size = $('.FoodPage_content').children('#footer').offset().top+50
 
-
-    $('.Content').removeClass('INDEX_Size')
-
     $('.Content').css('height',Size)
+   
 
 
     $('.Content_row').css('transform','translateX(-200%)')
@@ -165,7 +159,7 @@ $('.navbarItems li:nth-of-type(4),.RWDItems li:nth-of-type(4)').click(function()
 
    nowPage = 'hotel'
 
-    $('.Content').removeClass('INDEX_Size')
+
 
     $('.Content_row').css('transform','translateX(-300%)')
     $('.navbarItems li').css('color','var(--vblack)').css('transition','0.5s')

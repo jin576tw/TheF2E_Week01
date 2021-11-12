@@ -66,9 +66,138 @@
 
 
 .FoodPage_Pic{
-   
+    position: relative;
+   cursor: pointer;
     overflow: hidden;
     height: 375px;
+}
+
+.FoodPage_Pic img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.FoodPic_detail{
+    transition: 1s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+   
+    
+}
+.FoodPic_detail:hover{
+    opacity: 1;
+    
+}
+
+.detailbg{
+  
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+
+
+}
+.Pic_detail_warp{
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.Pic_detail_btn{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    
+}
+
+.detail_btn_link{
+    display: flex;
+}
+
+.detail_btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 1.6rem;
+    color:white;
+}
+
+.Pic_detail_name{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    
+}
+.Pic_detail_name h3{
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+.Pic_detail_name h4{
+    font-size: 1.6rem;
+    font-weight: 330;
+}
+
+
+@media (max-width: 767px) { 
+
+    .Pic_detail_warp{
+        position: absolute;
+        width: 100%;
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 8px;
+    }
+
+    .detail_btn{
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        font-size: 1.2rem;
+        color:white;
+    }
+
+
+    .Pic_detail_name{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        color: white;
+        
+    }
+
+    .Pic_detail_name h3{
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    .Pic_detail_name h4{
+        font-size: 1.4rem;
+        font-weight: 330;
+    }
+
 }
 
 #FoodPic01{
@@ -110,17 +239,17 @@
 
 }
 #FoodPic09{
-    width: 25%;
+    width: 30%;
     background-color: yellow;
 
 }
 #FoodPic10{
-    width: 50%;
+    width: 40%;
     background-color: peru;
 
 }
 #FoodPic11{
-    width: 25%;
+    width: 30%;
     background-color: salmon;
 
 }
@@ -148,6 +277,94 @@
 #FoodPic16{
     width: 35%;
     background-color: purple;
+
+
+}
+
+@media (max-width: 767px) { 
+
+    .FoodPage_Pic{
+   
+        overflow: hidden;
+        height: 180px;
+    }
+
+
+    #FoodPic01{
+        width: 50%;
+        background-color: pink;
+    }
+    #FoodPic02{
+        width: 50%;
+        background-color: #afa
+    }
+    #FoodPic03{
+        width: 50%;
+        background-color: cyan;
+    
+    }
+    #FoodPic04{
+        width: 50%;
+        background-color: orange;
+    
+    }
+    #FoodPic05{
+        width: 50%;
+        background-color: brown;
+    
+    }
+    #FoodPic06{
+        width: 50%;
+        background-color: red;
+    
+    }
+    #FoodPic07{
+        width: 50%;
+        background-color: blue;
+    
+    }
+    #FoodPic08{
+        width: 50%;
+        background-color: purple;
+    
+    }
+
+    #FoodPic09{
+        display: none;
+        
+    
+    }
+    #FoodPic10{
+        display: none;
+       
+    }
+    #FoodPic11{
+        display: none;
+    
+    }
+    #FoodPic12{
+        display: none;
+    
+    }
+    #FoodPic13{
+        display: none;
+    
+    }
+    
+    #FoodPic14{
+        display: none;
+    
+    }
+    #FoodPic15{
+        display: none;
+    
+    }
+    #FoodPic16{
+        display: none;
+    
+    
+    }
+
 
 }
 
@@ -211,12 +428,7 @@
     }
     
 
-    .FoodPage_Pic{
-   
-        overflow: hidden;
-        height: 100px;
-    }
-
+    
 
     .FoodPage_SearchBar{
    
