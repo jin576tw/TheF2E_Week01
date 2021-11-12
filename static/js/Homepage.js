@@ -171,34 +171,72 @@ if ($(window).width() > 768) {
 $('.hotView_row').on('click','.hotView_pic',function(){
 
 
-  const Size = $('.HomePage_warp').children('#footer').offset().top -50
+      let Size = 0
 
-  console.log(Size);
+      // 網頁版
+      if($(window).width() > 767){
 
-  $('.Content').css('height',Size)
+      Size = $('.HomePage').children('#footer').offset().top-50 
+
+      }else{
+
+      Size = $('.HomePage').children('#footer').offset().top +440
+
+      }
     
+
+  
+
+    $('.Content').css('height',Size)
 
     $('.ViewPage').fadeOut(500)
     $('.ViewIntro').fadeIn(1000)
 
     $('.Title_line').css('height','100%')
+
+    $("html, body").animate({ 
+
+      scrollTop: 0
+
+  }, 1 ,'swing');
 
 })
 
 $('.SearchList_warp').on('click','.SearchList',function(){
 
-  
-  const Size = $('.HomePage_warp').children('#footer').offset().top -50
+  let Size = 0
 
-  console.log(Size);
+   // 網頁版
+   if($(window).width() > 767){
+
+    Size = $('.HomePage').children('#footer').offset().top-50 
+
+   }else{
+
+    Size = $('.HomePage').children('#footer').offset().top +440
+
+   }
+  
+
 
   $('.Content').css('height',Size)
+
 
     $('.ViewPage').fadeOut(500)
     $('.ViewIntro').fadeIn(1000)
 
     $('.Title_line').css('height','100%')
 
+    
+
+
+      
+    $("html, body").animate({ 
+
+      scrollTop: 0
+
+  }, 1 ,'swing');
+ 
 
 
 

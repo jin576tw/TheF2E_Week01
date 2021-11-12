@@ -77,7 +77,8 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
 $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4').click(function(){
 
 
-    const Size = $('.HomePage_warp').children('#footer').offset().top+50
+    const Size = $('.HomePage').children('#footer').offset().top+50
+
 
     $('.Content').css('height',Size)
    
