@@ -127,7 +127,7 @@ select{
 .Content_row{
     display: flex;
     transition: 1s;
-    transform: translateX(-300%);
+    /* transform: translateX(-300%); */
 }
 
 .Content_page{

@@ -171,6 +171,13 @@ if ($(window).width() > 768) {
 $('.hotView_row').on('click','.hotView_pic',function(){
 
 
+  const Size = $('.HomePage_warp').children('#footer').offset().top -50
+
+  console.log(Size);
+
+  $('.Content').css('height',Size)
+    
+
     $('.ViewPage').fadeOut(500)
     $('.ViewIntro').fadeIn(1000)
 
@@ -180,6 +187,12 @@ $('.hotView_row').on('click','.hotView_pic',function(){
 
 $('.SearchList_warp').on('click','.SearchList',function(){
 
+  
+  const Size = $('.HomePage_warp').children('#footer').offset().top -50
+
+  console.log(Size);
+
+  $('.Content').css('height',Size)
 
     $('.ViewPage').fadeOut(500)
     $('.ViewIntro').fadeIn(1000)

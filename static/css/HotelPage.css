@@ -120,7 +120,7 @@
 }
 
 .searchInput_list button{
-   font-size: 1.6rem;
+   font-size: 2rem;
   
     position: absolute;
     right: 0;;
@@ -131,10 +131,10 @@
 
 }
 
-.HotelSearchBtn{
+.HotelSearchBtn {
     width: 142px;
     height: 50px;
-    font-size: 1.8rem;
+    font-size: 1.8rem !important; 
     background-color: var(--vYellow);
     color:white;
     border-radius: 10px;
@@ -239,5 +239,208 @@
 
     
     
+    
+}
+
+.MoreHotelWarp{
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.MoreHotelTitle{
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--vGrey);
+    border-top: 1px solid var(--vGrey);
+    margin-bottom: 60px;   
+}
+
+.MoreHotelTitle h2{
+    font-size: 2.4rem;
+    text-align: center;
+    color:var(--vblue);
+    
+}
+.MoreHotePicWarp{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 320px;
+    
+    overflow-y: auto;
+   
+}
+
+
+
+.MoreHotePicRow{
+    height: 320px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   
+}
+
+.MoreHote{
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+    min-width: 215px;
+    height: 315px;
+    background-color: white;
+    border-radius: 15px;
+    margin-right: 8px;
+    box-shadow: 0px 0px 15px #00000029;
+}
+
+.MoreHotePic{
+    position: relative;
+    height: 70%;
+    width: 215px;
+    min-height: 215px;
+    background-color: var(--vGrey);
+}
+
+.MoreHotePic img{
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.HotePicTag{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    right: 0px;
+    top: 15px;
+    background-color: white;
+    border-radius: 20px  0  0 20px ;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+
+}
+
+.HotePicTag h5{
+    position: relative;
+    margin-top: 5px;
+    font-size: 1.6rem;
+    color: var(--vblack);
+
+}
+
+.HotePicTag h5::before{
+    content: '';
+    position: absolute;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+
+    background-image: url('../images/icon/click.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+
+}
+
+
+.MoreHoteName{
+    height: 30%;
+    min-height: 100px;
+    padding: 30px 10px;
+    
+}
+.MoreHoteName h3{
+    color: var(--vblue);
+    margin-bottom: 12px;
+
+}
+.MoreHoteName h4{
+    position: relative;
+    margin-left: 25px;
+    color: var(--vblack);
+}
+.MoreHoteName h4::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -26px;
+    width: 25px;
+    height: 25px;
+    background-image: url('../images/icon/site.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.MoreHoteCount{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+
+    margin-top: 30px;
+}
+
+
+.HoteCountDot ul{
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.HoteCountDot li{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: var(--vGrey);
+    margin: 0 5px;
+
+}
+
+.DotActive{
+
+    background-color: var(--vblue) !important;
+
+}
+
+.HoteCountpan{
+    display: flex;
+}
+
+.Countpan{
+
+    width: 25px;
+    height: 25px;
+    margin: 0 5;
+   
+    margin-left: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+#CountPrev{
+    background-image: url('../images/icon/arrowLeft.svg');
+}
+#CountNext{
+    background-image: url('../images/icon/arrowRight.svg');
+}
+
+@media (max-width: 767px) { 
+
+    .MoreHotelTitle{
+        width: 80%;
+        margin: 0 auto;
+        padding: 30px 0;
+        border-bottom: 1px solid var(--vGrey);
+        border-top: 1px solid var(--vGrey);
+        margin-bottom: 40px;   
+    }
     
 }
