@@ -19,19 +19,14 @@
      <script src="https://kit.fontawesome.com/78ff172cd0.js" crossorigin="anonymous"></script>
 
      
-     <!-- slick css-->
-    <!-- <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/> -->
-
-
      <!-- css -->
      <link rel="stylesheet" href="./static/css/style.css" />
+     <link rel="stylesheet" href="./static/css/FoodPage.css" />
    
     <link rel="stylesheet" href="./static/css/navbar.css" />
     <link rel="stylesheet" href="./static/css/footer.css" />
-    <!-- <link rel="stylesheet" href="./static/css/TravelPage.css" /> -->
 
-    
+
 
 
     <!-- GoogleFont -->
@@ -64,7 +59,7 @@
 
 
     <!-- INDEX_Size -->
-    <div class="Content ">
+    <div class="Content INDEX_Size">
 
         <div class="Content_row">
 
@@ -121,9 +116,81 @@
 
                 <div class="Content_Header" id="Food_Header">
 
-                    <div class="MainLogo FoodLogo" ></div>
+                    <div class="MainLogo FoodLogo"></div>
+
+                    <div class="mouse_warp">
+                        <div class="mouseIcon">
+                            <div class="mouseIcon_Up"></div>
+                            <div class="mouseIcon_down"></div>
+                        </div>
+                    </div>
 
                 </div>
+
+                <div class="FoodPage_content">
+                    <div class="container">
+
+                        <div class="FoodPage_intro">
+                            <p>民以食為天的臺灣，幾乎是三步一小吃店，五步一大餐廳，可說是應有盡有。近年來由於工商業的發展快速，臺灣吃的文化除了傳統的中式飲食方式外，也發展到中式速食連鎖店的經營方式，使得臺灣吃的藝術變得更加繁複。<br> <br>因臺灣地處世界文化交流的總匯，世界各國的飲食也紛紛在臺灣出現，美國的漢堡、義大利的披薩、日本的生魚片、德國的豬腳、瑞士的乳酪等等，包羅萬象，讓臺灣著實成為饕家的天堂。而臺灣獨有的本土料理，風靡全球，嚐味一次，必將永生難忘。</p>
+                        </div>
+
+                        <div class="FoodPage_icon">
+                            <img src="./static/images/taiwan_logo_black.svg" alt="">
+                        </div>
+
+                        <div class="FoodPage_SearchBar">
+                            <h1>您想找哪個地方的美食呢？</h1>
+
+                            <select name="AllFoodCity">
+                                <option name="FoodCity" value="台北市">台北市</option>
+                                <option name="FoodCity"value="高雄市">高雄市</option>
+                                <option name="FoodCity" value="台中市">台中市</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="FoodPage_PicWarp">
+
+                            <div class="FoodPage_Pic" id="FoodPic01"></div>
+                            <div class="FoodPage_Pic" id="FoodPic02"></div>
+                            <div class="FoodPage_Pic" id="FoodPic03"></div>
+                            <div class="FoodPage_Pic" id="FoodPic04"></div>
+                            <div class="FoodPage_Pic" id="FoodPic05"></div>
+                            <div class="FoodPage_Pic" id="FoodPic06"></div>
+                            <div class="FoodPage_Pic" id="FoodPic07"></div>
+                            <div class="FoodPage_Pic" id="FoodPic08"></div>
+
+                            <div class="FoodPage_Pic" id="FoodPic09"></div>
+                            <div class="FoodPage_Pic" id="FoodPic10"></div>
+                            <div class="FoodPage_Pic" id="FoodPic11"></div>
+                            <div class="FoodPage_Pic" id="FoodPic12"></div>
+                            <div class="FoodPage_Pic" id="FoodPic13"></div>
+                            <div class="FoodPage_Pic" id="FoodPic14"></div>
+                            <div class="FoodPage_Pic" id="FoodPic15"></div>
+                            <div class="FoodPage_Pic" id="FoodPic16"></div>
+                          
+
+                        </div>
+
+                        <div class="FoodPage_panWarp">
+                            <div class="FoodPage_panBtn" id="panBtn_Prev"></div>
+                            <div class="FoodPage_panBtn" id="panBtn_Next"></div>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <section id="footer"></section>
+
+                    
+
+                </div>
+                
+
+
 
             </section>
 
@@ -134,8 +201,15 @@
                 <div class="Content_Header" id="Hotel_Header">
 
                     <div class="MainLogo HotelLogo" ></div>
+                    <div class="mouse_warp">
+                        <div class="mouseIcon">
+                            <div class="mouseIcon_Up"></div>
+                            <div class="mouseIcon_down"></div>
+                        </div>
+                    </div>
 
 
+                   
                 </div>
                 
             </section>
@@ -156,7 +230,6 @@
     
 
 
-    <section id="footer"></section>
 
 </body>
 

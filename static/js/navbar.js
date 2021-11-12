@@ -64,6 +64,12 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
         $('.MainLogo').removeClass('logoIN')
 
     }
+
+    $("html, body").animate({ 
+
+        scrollTop: 0
+
+    }, 1 ,'swing');
    
  
 
@@ -74,8 +80,12 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
 $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4').click(function(){
 
 
+    const Size = $('.HomePage').children('#footer').offset().top+50
 
     $('.Content').removeClass('INDEX_Size')
+
+    $('.Content').css('height',Size)
+   
 
     $('.Content_row').css('transform','translateX(-100%)')
 
@@ -93,6 +103,12 @@ $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4')
     $('.ViewIntro').fadeOut(500)
     $('.ViewPage').fadeIn(1000)
 
+    $("html, body").animate({ 
+
+        scrollTop: 0
+
+    }, 1 ,'swing');
+
 })
 
 
@@ -100,8 +116,13 @@ $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4')
 $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function(){
 
 
+    const Size = $('.FoodPage_content').children('#footer').offset().top+50
+
 
     $('.Content').removeClass('INDEX_Size')
+
+    $('.Content').css('height',Size)
+
 
     $('.Content_row').css('transform','translateX(-200%)')
     $('.navbarItems li').css('color','var(--vblack)').css('transition','0.5s')
@@ -131,6 +152,11 @@ $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function()
     }  
   
    
+    $("html, body").animate({ 
+
+        scrollTop: 0
+
+    }, 1 ,'swing');
 
     
 })
@@ -167,6 +193,12 @@ $('.navbarItems li:nth-of-type(4),.RWDItems li:nth-of-type(4)').click(function()
 
 
     }
+
+    $("html, body").animate({ 
+
+        scrollTop: 0
+
+    }, 1 ,'swing');
 
    
 

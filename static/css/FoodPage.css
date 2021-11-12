@@ -1,0 +1,272 @@
+.FoodPage_content{
+    position: relative;
+}
+
+.FoodPage_intro{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 90px;
+}
+
+.FoodPage_intro{
+    color: var(--vblack);
+    font-size: 1.6rem;
+
+}
+
+.FoodPage_icon{
+   
+    width: 20%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.FoodPage_SearchBar{
+   
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid  var(--vGrey);
+    border-bottom: 1px solid  var(--vGrey);
+    padding: 40px 0px;
+    
+}
+
+.FoodPage_SearchBar h1{
+    margin: 0 60px;
+    color: var(--vblack);
+    font-size: 2rem;
+    font-family: 'Noto Serif TC', serif;;
+   
+}
+
+.FoodPage_SearchBar select{ 
+    width: 50%;
+    max-width: 354px;
+    font-size: 1.6rem;
+    font-weight: 350;
+}
+
+.FoodPage_PicWarp{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+   
+    
+    margin-top: 120px;
+}
+
+
+.FoodPage_Pic{
+   
+    overflow: hidden;
+    height: 375px;
+}
+
+#FoodPic01{
+    width: 30%;
+    background-color: pink;
+}
+#FoodPic02{
+    width: 40%;
+    background-color: #afa
+}
+#FoodPic03{
+    width: 30%;
+    background-color: cyan;
+
+}
+#FoodPic04{
+    width: 55%;
+    background-color: orange;
+
+}
+#FoodPic05{
+    width: 45%;
+    background-color: brown;
+
+}
+#FoodPic06{
+    width: 35%;
+    background-color: red;
+
+}
+#FoodPic07{
+    width: 30%;
+    background-color: blue;
+
+}
+#FoodPic08{
+    width: 35%;
+    background-color: purple;
+
+}
+#FoodPic09{
+    width: 25%;
+    background-color: yellow;
+
+}
+#FoodPic10{
+    width: 50%;
+    background-color: peru;
+
+}
+#FoodPic11{
+    width: 25%;
+    background-color: salmon;
+
+}
+#FoodPic12{
+    width: 55%;
+    background-color: gray;
+
+}
+#FoodPic13{
+    width: 45%;
+    background-color: lawngreen;
+
+}
+
+#FoodPic14{
+    width: 35%;
+    background-color: red;
+
+}
+#FoodPic15{
+    width: 30%;
+    background-color: blue;
+
+}
+#FoodPic16{
+    width: 35%;
+    background-color: purple;
+
+}
+
+.FoodPage_panWarp{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    margin-bottom: 120px;
+}
+
+.FoodPage_panBtn{
+    cursor: pointer;
+    margin-left: 80px;
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#panBtn_Prev{
+    background-image: url('../images/icon/arrowWithBorderLeft_01_default.svg');
+
+}
+#panBtn_Next{
+    background-image: url('../images/icon/arrowWithBorderRight_01_default.svg');
+}
+
+
+@media (max-width: 1025px) { }
+
+@media (max-width: 767px) { 
+
+
+    .FoodPage_intro{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .FoodPage_icon{
+   
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+
+    .FoodPage_PicWarp{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+       
+        
+        margin-top: 40px;
+    }
+    
+
+    .FoodPage_Pic{
+   
+        overflow: hidden;
+        height: 100px;
+    }
+
+
+    .FoodPage_SearchBar{
+   
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid  var(--vGrey);
+        border-bottom: 1px solid  var(--vGrey);
+        padding: 40px 0px;
+        
+    }
+
+    .FoodPage_SearchBar h1{
+        margin: 0 10px;
+        margin-bottom: 30px;
+        color: var(--vblack);
+        font-size: 2rem;
+        font-family: 'Noto Serif TC', serif;;
+       
+    }
+
+    .FoodPage_SearchBar select{ 
+        width: 95%;
+        max-width: 354px;
+        font-size: 1.6rem;
+        font-weight: 350;
+    }
+
+    .FoodPage_panWarp{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+
+    .FoodPage_panBtn{
+        cursor: pointer;
+        margin-left: 30px;
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+
+
