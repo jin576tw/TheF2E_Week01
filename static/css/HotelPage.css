@@ -1,0 +1,243 @@
+.HotelPage_content{
+    width: 100%;
+}
+
+
+.FindHotel_warp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 120px 0px;
+}
+
+
+.FindHotel_picWarp{
+    position: relative;
+    display: flex;
+    width: 40%;
+    max-width: 474px;
+    height: 564px;
+   
+
+}
+
+.FindHotel_pic{
+    position: absolute;
+    height: 100%;
+    width: 100%;;
+    border-radius: 0% 25% ;
+    overflow: hidden;
+    transform: translate(30px ,-30px);
+}
+
+.FindHotel_pic img{
+    height: 100%;
+    object-fit: cover;
+}
+.FindHotel_picShadow{
+    position: absolute;
+    height: 100%;
+    width: 100%;;
+    border-radius: 0% 25% ;
+     background-color: #D0E6F1;
+}
+
+
+.FindHotel_searchInput{
+    width: 50%;
+
+    /* background-color: red; */
+}
+
+.searchInput_title{
+   
+    padding-left: 45px;
+    margin-bottom: 30px;
+}
+
+.searchInput_title h1{
+    position: relative;
+    font-family: 'Noto Serif TC', serif;
+    color:var(--vblack);
+    font-weight: bold
+}
+
+
+.searchInput_title h1::before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    
+    background-image: url('../images/icon/hotel.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: -45px;
+    top: -5px;
+
+}
+
+.searchInput_list{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.searchInput_list select{
+    width: 48%;
+    font-size: 1.6rem;
+}
+
+.searchInput_list input{
+    position: relative;
+    width: 48%;
+    font-size: 1.6rem;
+
+
+}
+.searchInput_list #hotelDate::-webkit-calendar-picker-indicator{
+
+    position: absolute;
+    right: 8px;
+    width: 20px; 
+    height: 25px;
+    background: url('../images/icon/calander.svg') 
+    
+
+}
+
+.searchInput_list label{
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#KeySearchInput{
+
+    width: 100%;
+
+}
+
+.searchInput_list button{
+   font-size: 1.6rem;
+  
+    position: absolute;
+    right: 0;;
+    background-color: #EBEBEB !important;
+    width: 50px;
+    height: 50px;
+
+
+}
+
+.HotelSearchBtn{
+    width: 142px;
+    height: 50px;
+    font-size: 1.8rem;
+    background-color: var(--vYellow);
+    color:white;
+    border-radius: 10px;
+    font-family: 'EB Garamond', serif;;
+
+}
+
+@media (max-width: 1025px) { 
+
+    .FindHotel_picWarp{
+        position: relative;
+        display: flex;
+        width: 50%;
+        max-width: 474px;
+        height: 564px;
+       
+    
+    }
+
+    .FindHotel_searchInput{
+        width: 40%;
+    
+        /* background-color: red; */
+    }
+}
+@media (max-width: 767px) { 
+
+    .FindHotel_warp{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 60px 0px;
+    }
+
+    .FindHotel_picWarp{
+        position: relative;
+        display: flex;
+        width: 90%;
+        max-width: 474px;
+        height: 400px;
+        margin: 0 auto;
+        margin-right: 30px;
+       
+    
+    }
+    
+    .FindHotel_searchInput{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 500px;
+        margin: 0 auto;
+        margin-top: 60px;
+        /* background-color: red; */
+    }
+
+    .searchInput_title h1{
+        position: relative;
+        font-family: 'Noto Serif TC', serif;
+        color:var(--vblack);
+        font-weight: bold;
+        font-size: 2rem; 
+    }
+    
+
+    .searchInput_list{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .searchInput_list select{
+        width: 100%;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .searchInput_list input{
+        position: relative;
+        width: 100%;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    
+    
+    }
+
+    .HotelSearchBtn{
+       margin-top: 30px;
+        width: 142px;
+        height: 50px;
+        font-size: 1.8rem;
+        background-color: var(--vYellow);
+        color:white;
+        border-radius: 10px;
+        font-family: 'EB Garamond', serif;;
+    
+    }
+
+    
+    
+    
+}

@@ -23,6 +23,7 @@
      <link rel="stylesheet" href="./static/css/style.css" />
      <link rel="stylesheet" href="./static/css/FoodPage.css" />
      <link rel="stylesheet" href="./static/css/HomePage.css" />
+     <link rel="stylesheet" href="./static/css/HotelPage.css" />
    
     <link rel="stylesheet" href="./static/css/navbar.css" />
     <link rel="stylesheet" href="./static/css/footer.css" />
@@ -772,10 +773,86 @@
 
 
                    
+            
                 </div>
+                <div class="HotelPage_content">
+                    <div class="container">
+                        <div class="FindHotel_warp">
+
+                            <div class="FindHotel_picWarp">
+                                <div class="FindHotel_picShadow"></div>
+                                <div class="FindHotel_pic">
+                                    <img src="./static/images/hotel.jpeg" alt="">
+                                </div>
+                            
+                            </div>
+
+                            <div class="FindHotel_searchInput">
+                                <div class="searchInput_title">
+                                    <h1>快速找到您感興趣的住宿點</h1>
+                                </div>
+                                <div class="searchInput_list">
+                                    <select name="AllHotelCity" id="">
+                                        <option name="HotelCity"  value="台北市">台北市</option>
+                                        <option name="HotelCity"  value="台中市">台中市</option>
+                                        <option name="HotelCity"  value="高雄市">高雄市</option>
+                                       
+                                    </select>
+                                </div>
+
+                                <div class="searchInput_list">
+                                    <input type="date" id="hotelDate" name="hotelStartDate">
+                                    <input type="date" id="hotelDate" name="hotelEndDate">
+                                </div>
+
+                                <div class="searchInput_list">
+                                    <select name="AllHotelroom" id="">
+                                        <option name="Hotelroom"  value="一間">一間</option>
+                                        <option name="Hotelroom"  value="一間">一間</option>
+                                        <option name="Hotelroom"  value="一間">一間</option>
+                                       
+                                    </select>
+
+                                    <select name="AllHotelcount" id="">
+                                        <option name="Hotelcount"  value="一人">一人</option>
+                                        <option name="Hotelcount"  value="一人">一人</option>
+                                        <option name="Hotelcount"  value="一人">一人</option>
+                                       
+                                    </select>
+                                </div>
+
+                                <div class="searchInput_list">
+                                    <label for="">
+                                    
+                                    <input id="KeySearchInput" type="text" placeholder="關鍵字查詢">
+
+                                    <button>
+                                        <i class="fas fa-search"></i>
+
+                                    </button>
+                                    </label>
+                                   
+                                </div>
+
+
+                                <button class="HotelSearchBtn">search
+                                </button>
+
+
+                            </div> 
+
+                        </div>
+
+                        <div class="MoreHotelWarp"></div>
+                    </div>
+                </div>
+                <section class="footer">
+                    <p>TaiwanTravel © 2021 Designer Vum. Engineer JamesW. All rights reserved.</p>
+                </section>
                 
             </section>
 
+           
            
 
         </div>

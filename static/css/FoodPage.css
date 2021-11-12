@@ -280,13 +280,21 @@
 
 
 }
+@media (max-width: 1025px) { 
+
+    .FoodPage_Pic{
+   
+        overflow: hidden;
+        height: 180px;
+    }
+}
 
 @media (max-width: 767px) { 
 
     .FoodPage_Pic{
    
         overflow: hidden;
-        height: 180px;
+        height: 200px;
     }
 
 

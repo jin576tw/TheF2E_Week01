@@ -159,6 +159,9 @@ $('.navbarItems li:nth-of-type(4),.RWDItems li:nth-of-type(4)').click(function()
 
    nowPage = 'hotel'
 
+   const Size = $('#Hotel_page').children('.footer').offset().top+50
+
+   $('.Content').css('height',Size)
 
 
     $('.Content_row').css('transform','translateX(-300%)')

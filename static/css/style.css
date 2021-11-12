@@ -5,7 +5,7 @@
     font-family:'Noto Sans TC', sans-serif
 }
 body{
-    font-family:  'Noto Sans TC', sans-serif,'Noto Serif TC', serif;
+    font-family:  'Noto Sans TC', sans-serif,'Noto Serif TC', serif,'EB Garamond', serif;
     font-weight: 400;
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
@@ -73,6 +73,14 @@ button {
 button:focus {
     outline: none;
 }
+input{
+    height: 50px;
+    background-color: #EBEBEB !important;
+    border-radius: 10px;
+    border: transparent;
+    padding-left: 10px;
+    
+}
 input:focus {
     outline: none;
 }
@@ -99,10 +107,10 @@ select{
 /* ////////////動畫//////////////////// */
 
 
-
+@media (max-width: 1025px) { }
 @media (max-width: 767px) { }
 
-@media (max-width: 1025px) { }
+
 
 
 /* /////////////////首頁//////////////// */
@@ -119,7 +127,7 @@ select{
 .Content_row{
     display: flex;
     transition: 1s;
-    transform: translateX(-200%);
+    transform: translateX(-300%);
 }
 
 .Content_page{
