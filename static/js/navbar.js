@@ -62,6 +62,12 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
 
     }
 
+    let url = location.pathname + '?TravelPage'
+    history.pushState({
+    url: url,
+    title: document.title
+    }, document.title, url)
+
     $("html, body").animate({ 
 
         scrollTop: 0
@@ -106,6 +112,12 @@ $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4')
     $('.HomePage').css('opacity','1')
 
 
+    let url = location.pathname + '?HomePage'
+    history.pushState({
+    url: url,
+    title: document.title
+    }, document.title, url)
+
     
 
     $("html, body").animate({ 
@@ -122,7 +134,7 @@ $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function()
 
 
 
-    const Size = $('.FoodPage_content').children('#footer').offset().top+50
+    const Size = $('#Food_page').children('.footer').offset().top+50
 
     $('.Content').css('height',Size)
    
@@ -154,6 +166,12 @@ $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function()
         $('.MainLogo').removeClass('logoIN')
 
     }  
+
+    let url = location.pathname + '?FoodPage'
+    history.pushState({
+    url: url,
+    title: document.title
+    }, document.title, url)
   
    
     $("html, body").animate({ 
@@ -167,7 +185,7 @@ $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function()
 // 住宿資訊頁
 $('.navbarItems li:nth-of-type(4),.RWDItems li:nth-of-type(4)').click(function(){
 
-   nowPage = 'hotel'
+
 
    const Size = $('#Hotel_page').children('.footer').offset().top+50
 
@@ -200,6 +218,12 @@ $('.navbarItems li:nth-of-type(4),.RWDItems li:nth-of-type(4)').click(function()
 
 
     }
+
+    let url = location.pathname + '?HotelPage'
+    history.pushState({
+    url: url,
+    title: document.title
+    }, document.title, url)
 
     $("html, body").animate({ 
 

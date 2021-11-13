@@ -11,6 +11,11 @@
     /* background-color: red; */
 
 }
+
+.Navbar_blue{
+    background-color: var(--light_blue) !important;
+}
+
 .navbar_warp{
     
     width: 100%;

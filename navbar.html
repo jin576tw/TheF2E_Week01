@@ -77,4 +77,122 @@
 
 <!-- js -->
 <script src="./static/js/navbar.js"></script>
+
+
+<script>
+
+    // URL網頁狀態
+    const TravelPage = location.href.substr(-10,10) == '?TravelPage'
+    const HomePage = location.href.substr(-9,9) == '?HomePage'
+    const FoodPage = location.href.substr(-9,9) == '?FoodPage'
+    const HotelPage = location.href.substr(-10,10) == '?HotelPage'
+
+
+    setTimeout(() => {
+
+        $('.TravelLogo').addClass('logoIN')
+
+    }, 600);
+
+    if(TravelPage){
+
+        $('.Content').css('height','100vh')
+
+        $('.Content_row').css('transform','translateX(0%)')
+        $('.navbarItems li').css('color','white').css('transition','0.5s')
+        $('.navbarLogo h2').css('color','white').css('transition','0.5s')
+
+        $('.HomePage').css('opacity','0')
+
+        $('.Navbar').css('background-color','transparent')
+        $('.icon_bar').removeClass('dark')
+
+
+    }
+    
+    if(HomePage){
+
+        const Size = $('.HomePage').outerHeight()+50
+
+        $('.Content').css('height',Size)
+
+        $('.Navbar').css('background-color','var(--light_blue)')
+
+        $('.Content_row').css('transform','translateX(-100%)')
+
+        $('.navbarItems li').css('color','white').css('transition','0.5s')
+        $('.navbarLogo h2').css('color','white').css('transition','0.5s')
+
+        $('.HomePage').css('opacity','1')
+
+        $('.icon_bar').removeClass('dark')
+
+        
+
+    }
+
+    if(FoodPage){
+
+
+        $('.Content_row').css('transform','translateX(-200%)')
+
+        $('.navbarItems li').css('color','var(--vblack)').css('transition','0.5s')
+        $('.navbarLogo h2').css('color','var(--vblack)').css('transition','0.5s')
+        $('.HomePage').css('opacity','0')
+
+        $('.Navbar').css('background-color','transparent')
+    
+        $('.icon_bar').addClass('dark')
+
+
+        setTimeout(() => {
+
+            $('.TravelLogo').removeClass('logoIN')
+            $('.HotelLogo').removeClass('logoIN')
+            $('.FoodLogo').addClass('logoIN')
+
+            const Size = $('#Food_page').children('.footer').offset().top+50
+
+            $('.Content').css('height',Size)
+
+        }, 600);
+
+       
+
+
+
+
+    }
+
+    if( HotelPage ){
+
+        const Size = $('#Hotel_page').children('.footer').offset().top+50
+
+        $('.Content').css('height',Size)
+
+        $('.Content_row').css('transform','translateX(-300%)')
+        $('.navbarItems li').css('color','var(--vblack)').css('transition','0.5s')
+        $('.navbarLogo h2').css('color','var(--vblack)').css('transition','0.5s')
+        $('.HomePage').css('opacity','0')
+
+        $('.Navbar').css('background-color','transparent')
+        $('.icon_bar').addClass('dark')
+
+        setTimeout(() => {
+            
+            $('.TravelLogo').removeClass('logoIN')
+            $('.FoodLogo').removeClass('logoIN')
+            $('.HotelLogo').addClass('logoIN')
+
+        }, 600);
+
+
+
+        
+
+    }
+
+
+
+</script>
 </html>
