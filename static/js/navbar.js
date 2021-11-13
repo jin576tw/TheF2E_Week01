@@ -85,7 +85,7 @@ $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4')
         const Size = $('.HomePage').outerHeight()
   
   
-        console.log(Size);
+        // console.log(Size);
   
         $('.Content').css('height',Size)
   

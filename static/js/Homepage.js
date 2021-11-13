@@ -183,7 +183,7 @@ $('.hotView_row').on('click','.hotView_pic',function(){
     const Size = $('.HomePage').outerHeight()
 
 
-    console.log(Size);
+    // console.log(Size);
 
     $('.Content').css('height',Size)
 
@@ -218,7 +218,7 @@ $('.SearchList_warp').on('click','.SearchList',function(){
       const Size = $('.HomePage').outerHeight()
 
 
-      console.log(Size);
+      // console.log(Size);
 
       $('.Content').css('height',Size)
 

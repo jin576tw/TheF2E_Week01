@@ -554,11 +554,17 @@
     margin-bottom: 30px;
 }
 
+.searchfilter_input input{
+   
+
+}
+
 
 .ViewSearch{
     max-width: 280px;
     width: 90%;
     height: 100%;
+    background-color: white;
     border:1px solid transparent;
     font-size: 1.6rem; 
     padding-left: 10px;

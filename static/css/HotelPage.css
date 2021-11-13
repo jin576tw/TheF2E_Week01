@@ -230,6 +230,11 @@
     
     }
 
+    #hotelDate{
+        width: 100% !important;
+
+    }
+
     .Hotel_Btn{
        margin-top: 30px;
         width: 142px;

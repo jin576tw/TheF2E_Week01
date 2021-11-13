@@ -75,7 +75,7 @@ button:focus {
 }
 input{
     height: 50px;
-    background-color: #EBEBEB !important;
+    background-color: #EBEBEB;
     border-radius: 10px;
     border: transparent;
     padding-left: 10px;
