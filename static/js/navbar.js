@@ -76,12 +76,22 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
 // 首頁
 $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4').click(function(){
 
+    $('.ViewIntro').fadeOut(500)
+    $('.ViewPage').fadeIn(900)
 
-    const Size = $('.HomePage').children('#footer').offset().top+50
+    // 因有延遲，過一秒後計算高度
+    setTimeout(() => {
 
+        const Size = $('.HomePage').outerHeight()
+  
+  
+        console.log(Size);
+  
+        $('.Content').css('height',Size)
+  
+       
+      },900)
 
-    $('.Content').css('height',Size)
-   
 
     $('.Content_row').css('transform','translateX(-100%)')
 
@@ -96,8 +106,7 @@ $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4')
     $('.HomePage').css('opacity','1')
 
 
-    $('.ViewIntro').fadeOut(500)
-    $('.ViewPage').fadeIn(1000)
+    
 
     $("html, body").animate({ 
 

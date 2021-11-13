@@ -171,26 +171,27 @@ if ($(window).width() > 768) {
 $('.hotView_row').on('click','.hotView_pic',function(){
 
 
-      let Size = 0
+  $('.ViewPage').fadeOut(500)
 
-      // 網頁版
-      if($(window).width() > 767){
 
-      Size = $('.HomePage').children('#footer').offset().top-50 
+  $('.ViewIntro').fadeIn(900)
 
-      }else{
 
-      Size = $('.HomePage').children('#footer').offset().top +440
+  // 因有延遲，過一秒後計算高度
+  setTimeout(() => {
 
-      }
-    
+    const Size = $('.HomePage').outerHeight()
 
-  
+
+    console.log(Size);
 
     $('.Content').css('height',Size)
 
-    $('.ViewPage').fadeOut(500)
-    $('.ViewIntro').fadeIn(1000)
+   
+  },900)
+    
+
+
 
     $('.Title_line').css('height','100%')
 
@@ -204,32 +205,32 @@ $('.hotView_row').on('click','.hotView_pic',function(){
 
 $('.SearchList_warp').on('click','.SearchList',function(){
 
-  let Size = 0
-
-   // 網頁版
-   if($(window).width() > 767){
-
-    Size = $('.HomePage').children('#footer').offset().top-50 
-
-   }else{
-
-    Size = $('.HomePage').children('#footer').offset().top +440
-
-   }
-  
-
-
-  $('.Content').css('height',Size)
-
 
     $('.ViewPage').fadeOut(500)
+
+
     $('.ViewIntro').fadeIn(1000)
+
+
+    // 因有延遲，過一秒後計算高度
+    setTimeout(() => {
+
+      const Size = $('.HomePage').outerHeight()
+
+
+      console.log(Size);
+
+      $('.Content').css('height',Size)
+
+     
+    },900)
+  
+
+  
 
     $('.Title_line').css('height','100%')
 
     
-
-
       
     $("html, body").animate({ 
 
