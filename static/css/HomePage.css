@@ -1531,6 +1531,7 @@
 
 /* 景點圖片 */
 .ViewIntro_PicWarp{
+    margin: 0 auto;
     position: relative;
     width: 60%;
     max-width: 660px;
@@ -1603,14 +1604,15 @@
     .ViewIntro_Detail{
         width: 48%;
        
-        height: 550px;
+        height: 650px;
     }
 
     .ViewIntro_PicWarp{
+        margin: 0 auto;
         position: relative;
         width: 50%;
         max-width: 345px;
-        height: 400px;
+        height: 300px;
         border-radius: 20px;
         overflow: hidden;
       
@@ -1637,7 +1639,7 @@
         justify-content: center;
         align-items: center;
         width: 20px;
-        height: 475px;
+        height: 575px;
     
         top: 5px;
         left: 0px;
@@ -1655,7 +1657,8 @@
 
         display: flex;
         flex-direction: column-reverse;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     
     
@@ -1663,6 +1666,7 @@
     }
 
     .ViewIntro_PicWarp{
+        margin: 0 auto;
         position: relative;
         width: 100%;
         max-width: 345px;
