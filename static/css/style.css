@@ -148,7 +148,7 @@ select{
 }
 
 #Travel_Header{
-    background-image: url('../images/banner01.jpg');
+    background-image: url('../images/banner01-2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -276,6 +276,8 @@ select{
 
 
 .searchBar{
+    opacity: 0;
+    transition: 0.8s;
     display: flex;
     justify-content: space-between;
     align-items: center;

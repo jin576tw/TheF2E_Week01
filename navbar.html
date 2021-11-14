@@ -95,12 +95,15 @@
     setTimeout(() => {
 
         $('.TravelLogo').addClass('logoIN')
+        $('.searchBar').css('opacity',1)
 
     }, 600);
 
     if(TravelPage){
 
         $('.Content').css('height','100vh')
+
+        $('.searchBar').css('opacity',0)
 
         $('.Content_row').css('transform','translateX(0%)')
         $('.navbarItems li').css('color','white').css('transition','0.5s')
@@ -125,6 +128,7 @@
         $('.navbarItems li').css('color','white').css('transition','0.5s')
         $('.navbarLogo h2').css('color','white').css('transition','0.5s')
 
+        $('.searchBar').css('opacity',0)
         $('.HomePage').css('opacity','1')
 
         $('.icon_bar').removeClass('dark')
@@ -156,6 +160,8 @@
         $('.navbarItems li').css('color','var(--vblack)').css('transition','0.5s')
         $('.navbarLogo h2').css('color','var(--vblack)').css('transition','0.5s')
         $('.HomePage').css('opacity','0')
+
+        $('.searchBar').css('opacity',0)
 
         $('.Navbar').css('background-color','transparent')
     
@@ -192,6 +198,8 @@
         $('.navbarLogo h2').css('color','var(--vblack)').css('transition','0.5s')
         $('.HomePage').css('opacity','0')
 
+        $('.searchBar').css('opacity',0)
+
         $('.Navbar').css('background-color','transparent')
         $('.icon_bar').addClass('dark')
 
@@ -219,6 +227,7 @@
         $('.navbarLogo h2').css('color','white').css('transition','0.5s')
 
         $('.HomePage').css('opacity','1')
+        $('.searchBar').css('opacity',0)
 
         
 

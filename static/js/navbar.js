@@ -55,6 +55,8 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
         $('.FoodLogo').removeClass('logoIN')
         $('.HotelLogo').removeClass('logoIN')
         $('.TravelLogo').addClass('logoIN')
+
+        $('.searchBar').css('opacity',1)
         }, 600);
 
     }else{
@@ -161,6 +163,7 @@ $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function()
             $('.TravelLogo').removeClass('logoIN')
             $('.HotelLogo').removeClass('logoIN')
             $('.FoodLogo').addClass('logoIN')
+            $('.searchBar').css('opacity',0)
 
         }, 600);
 
@@ -211,6 +214,7 @@ $('.navbarItems li:nth-of-type(4),.RWDItems li:nth-of-type(4)').click(function()
             $('.TravelLogo').removeClass('logoIN')
             $('.FoodLogo').removeClass('logoIN')
             $('.HotelLogo').addClass('logoIN')
+            $('.searchBar').css('opacity',0)
 
         }, 600);
 
