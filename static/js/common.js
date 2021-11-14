@@ -31,6 +31,7 @@ function getAuthorizationHeader() {
 
 // console.log(nowTIME);
 
+let TPXData = []
 
 let RegionOption = ``
 let CityOption = ``
@@ -111,6 +112,15 @@ const OverTitle = (p,len) =>{
   }
 
 }
+
+
+
+
+
+/////////////////////////分頁載入//////////////////////////
+
+// 選擇一頁幾筆資料
+const per = 7
 
 //要顯示在畫面上的資料數量，預設每一頁只顯示幾筆資料。
 //顯示當前頁數
@@ -237,6 +247,7 @@ function pagination(data ,perpage,nowPage) {
   const maxData = (nowPage * perpage) ;
 
 
+  
   // 先建立新陣列
   const Newdata = [];
 
@@ -275,6 +286,23 @@ function pagination(data ,perpage,nowPage) {
 
   }
 
+  function Location(data){
+
+    if(data.Address == null ){
+
+
+      return data.City
+
+      
+    }else{
+
+      return data.Address.substr(0,9)
+    }
+
+
+  }
+
+  // 判斷有無圖片
   function EmptyPic(pic,descript){
 
     if(pic == null || descript==null){
@@ -287,6 +315,7 @@ function pagination(data ,perpage,nowPage) {
     }
   }
 
+  // 判斷有無開放時間
   function EmptyTimeOpen(OpenTime){
 
     if(OpenTime == null){
@@ -299,7 +328,7 @@ function pagination(data ,perpage,nowPage) {
 
       return `
       <div class="ListContent_time">
-      <h4>${OverTitle(OpenTime,12)}</h4>
+      <h4>${OverTitle(OpenTime,8)}</h4>
       </div>`
 
     }
@@ -311,7 +340,7 @@ function pagination(data ,perpage,nowPage) {
   let itemStr =``
   for (let i = 0; i < Newdata.length; i++) {
       let item = `
-      <div class="SearchList" id="${Newdata[i].ID}">
+      <div class="SearchList animate__animated animate__fadeIn" id="${Newdata[i].ID}">
           <div class="ListPic">`
           +EmptyPic(Newdata[i].Picture.PictureUrl1,Newdata[i].Picture. PictureDescription1)+`</div>
 
@@ -336,7 +365,7 @@ function pagination(data ,perpage,nowPage) {
                   <div class="ListContent_Detail">
 
                       <div class="ListContent_location">
-                          <h4>${Newdata[i].City}</h4>
+                          <h4>${Location(Newdata[i])}</h4>
                       </div>`+
                      
                       EmptyTimeOpen(Newdata[i].OpenTime)
@@ -379,6 +408,11 @@ console.log("NewArr", Newdata);
 
 
 
+// 城市tpx URL
+let TPX_CityUrl = (city) =>{
+  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$format=JSON`
+
+}
 
 
 // 旅遊情報選單
@@ -409,17 +443,18 @@ $('#city').change(function(){
 })
 
 
+
 // 旅遊情報搜尋
 $('.search_btn').click(function(){
 
 
-  if(RegionOption == '' || CityOption == ''){
+    if(RegionOption == '' || CityOption == ''){
 
-    alert('請輸入地區/城市')
+      alert('請輸入地區/城市')
 
-  }else{
+    }else{
 
-    console.log(RegionOption,CityOption);
+    
 
 
     ////////////轉場景點查詢///////////
@@ -486,114 +521,66 @@ $('.search_btn').click(function(){
 
    })
 
+    console.log(RegionOption,CityOption);
 
-   let tpx = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${CityOption}?$format=JSON`
-
-
-
-  axios.get(
-    `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${CityOption}?$format=JSON`,
-  {
-      headers: getAuthorizationHeader()
-  }
-  )
-  .then(function (response) {
-
-
-    const thisData = response.data;
-
-    // 選擇一頁幾筆資料
-    const per = 7
-
-    // 分頁初始值第一頁
-    pagination(thisData, per, 1)
-
-
-    // 選擇頁數
-    $('.ptn_warp').on('click','.ptn',function(){
-
-
-      let nowPage = parseInt($(this).attr('value'))
-
-      pagination(thisData, per,nowPage)
-
-
-
-    })
-
-
-
-
-    $('.ptnPrev').click(function(){
-
-
-
-        let nowPage = parseInt($('.ptn_active').attr('value'))
-        console.log(nowPage);
-
-
-        if(nowPage == 1){
-
-
-          $(this).css('opacity','0.3').attr('disabled', true);
-       
-
-        }else{
-
-          $(this).attr('disabled', false);
-
-          pagination(thisData, per,nowPage-1)
-
-        }
-   
     
 
+  
+
+    axios.get(
+
+      TPX_CityUrl(CityOption),
+
+    {
+        headers: getAuthorizationHeader()
+    }
+    )
+    .then(function (response) {
+
+
+      TPXData = response.data;
+
+      // 分頁初始值第一頁
+      pagination(TPXData, per, 1)
+
+
+      // 選擇頁數
+      $('.ptn_warp').on('click','.ptn',function(){
+
+
+        let nowPage = parseInt($(this).attr('value'))
+
+        pagination(TPXData, per, nowPage)
+
+
+        setTimeout(() => {
+
+
+          const Size = $('.HomePage').outerHeight()
+
+          $('.Content').css('height',Size)
+
+
+
+        }, 600);
+
+        $("html, body").animate({ 
+
+          scrollTop: $('#ViewPage_Content').offset().top 
+
+        }, 1 ,'swing');
+
+
+
+
+      })
+
+
+
     })
-
-
-    $('.ptnNext').click(function(){
-
-      const maxPage =  Math.ceil(thisData.length / per);
-
-      console.log(maxPage);
-
-      let nowPage = parseInt($('.ptn_active').attr('value'))
-
-      console.log(nowPage);
-
-      if(nowPage == maxPage){
-
-
-        $(this).css('opacity','0.3').attr('disabled', true);
-
-      }else{
-
-        $(this).attr('disabled', false);
-
-        pagination(thisData, per, nowPage+1)
-
-      }
-
-
-    })
-
-
-
-
-
-  })
-  .catch(function (error) {
-    console.log(error);
-  }); 
-
-
-
- 
-
-
-
-
-
+    .catch(function (error) {
+      console.log(error);
+    }); 
 
 
 

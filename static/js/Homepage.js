@@ -1,4 +1,90 @@
-//／／／／篩選內容///////////
+/////////////////////////分頁//////////////////////////
+// 分頁上一頁按鈕
+$('.ptnPrev').click(function(){
+
+  let nowPage = parseInt($('.ptn_active').attr('value'))
+
+  if(nowPage == 1){
+
+    $(this).css('opacity','0.3').attr('disabled', true);
+    
+
+  }else{
+
+    console.log(nowPage-1);
+
+    pagination(TPXData, per,nowPage-1)
+
+  }
+
+
+  setTimeout(() => {
+
+
+    const Size = $('.HomePage').outerHeight()
+
+    $('.Content').css('height',Size)
+
+
+
+  }, 600);
+
+  $("html, body").animate({ 
+
+    scrollTop: $('#ViewPage_Content').offset().top 
+
+  }, 1 ,'swing');
+
+
+
+})
+
+// 分頁下一頁按鈕
+$('.ptnNext').click(function(){
+
+
+  let nowPage = parseInt($('.ptn_active').attr('value'))
+
+  const maxPage =  Math.ceil(TPXData.length / per);
+
+
+  if(nowPage == maxPage){
+
+
+    $(this).css('opacity','0.3').attr('disabled', true);
+
+  }else{
+
+    $(this).attr('disabled', false);
+
+    pagination(TPXData, per, nowPage+1)
+
+  }
+
+
+
+
+  setTimeout(() => {
+
+
+    const Size = $('.HomePage').outerHeight()
+
+    $('.Content').css('height',Size)
+
+
+
+  }, 600);
+
+  $("html, body").animate({ 
+
+    scrollTop: $('#ViewPage_Content').offset().top 
+
+  }, 1 ,'swing');
+
+
+})
+
+/////////////////////////篩選內容/////////////////////////
 
 $('#filterRegion').change(function(){
 
@@ -13,6 +99,15 @@ $('#filterRegion').change(function(){
   
 
 })
+
+
+$('.filterBtn').click(function(){
+
+  console.log(TPXData );
+})
+
+
+
 
 
 
