@@ -112,9 +112,7 @@
     
     if(HomePage){
 
-        const Size = $('.HomePage').outerHeight()+50
-
-        $('.Content').css('height',Size)
+    
 
         $('.Navbar').css('background-color','var(--light_blue)')
 
@@ -126,6 +124,17 @@
         $('.HomePage').css('opacity','1')
 
         $('.icon_bar').removeClass('dark')
+
+        setTimeout(() => {
+
+
+            const Size = $('.HomePage').outerHeight()
+
+            $('.Content').css('height',Size)
+
+
+
+        }, 600);
 
         
 

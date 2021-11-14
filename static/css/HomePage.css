@@ -487,6 +487,119 @@
 
 }
 
+
+/* 景點查詢分頁按鈕 */
+.ViewPagination_warp{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+
+}
+
+.ViewPagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ptn{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--vGrey);
+    border-radius: 10px;
+    background-color: white;
+    margin: 0 5px;
+    font-size: 1.6rem;  
+    color:var(--vGrey);
+}
+
+.ptn:hover{
+
+    transition: 0.8s;
+    border: 1px solid var(--vblue);
+
+    
+}
+
+
+
+.ptn_warp{
+    display: flex;
+    justify-content: center;
+}
+
+.ptnPrev{
+
+    border: 0.5px solid var(--vblue);
+    background-image: url('../images/icon/arrowWithBorderLeft_default.svg');
+    background-size: contain;
+    background-position: center;
+
+}
+
+.ptnNext{
+
+    border: 0.5px solid var(--vblue);
+    background-image: url('../images/icon/arrowWithBorderRight_default.svg');
+    background-size: contain;
+    background-position: center;
+
+
+}
+
+.ptn_active{
+    background-color: var(--vblue);
+    border: 1px solid transparent;
+    color:white;
+
+}
+
+@media (max-width: 767px) { 
+
+
+    .ViewPagination_warp{
+        width: 100%;
+        height: 45px;
+        margin-top: 20px;
+        margin-bottom: 60px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    
+    }
+
+    .ptn{
+        cursor: pointer;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--vGrey);
+        border-radius: 10px;
+        background-color: white;
+        margin: 0 5px;
+        font-size: 1.6rem;  
+        color:var(--vGrey);
+    }
+
+    .ptn_active{
+        background-color: var(--vblue);
+        border: 1px solid transparent;
+        color:white;
+    
+    }
+}
+
+
 /* 景點查詢搜尋欄 */
 .View_searchBar{
     width: 30%;
@@ -746,7 +859,17 @@
 .ListPic{
     width: 40%;
     height: 100%;
-    background-color:var(--vGrey)
+    background-color:var(--vGrey);
+    background-image: url('../images/taiwan_logo_white.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.ListPic img{
+    height: 100%;
+    object-fit: cover;
 }
 
 .ListContent{
@@ -765,18 +888,23 @@
     align-items: center;
     justify-content: space-between;
     /* background-color: green; */
-    height: 35px;
+    margin-top: 8px;
+    min-height: 35px;
     margin-bottom: 10px;
 
 }
 
 .ListContent_name h1{
+
+    max-width: 300px;
     color: var(--vblue);
+    word-wrap:break-word;
+    white-space:wrap
 }
 
 .ListContent_tag{
-    width: 80px;
-    height: 100%;
+    min-width: 90px;
+    height: 30px;
     border-radius: 15px;
     background-color: var(--vYellow);
     display: flex;
@@ -972,7 +1100,7 @@
 
     .SearchList{
         width: 100%;
-        height: 150px;
+        height: 180px;
         border-radius: 15px;
         background-color: white;
         box-shadow: 0px 4px 8px #0000002E;
@@ -983,13 +1111,55 @@
     }
 
 
+    .ListPic{
+        width: 46%;
+        height: 100%;
+        background-color:var(--vGrey)
+    }
+
+    .ListContent{
+        position: relative;
+        width: 54%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 15px;
+    }
+
+    .ListContent_title{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 0px;
+        min-height: 50px;
+        margin-bottom: 8px;
+    
+    }
+
     .ListContent_name h1{
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: var(--vblue);
     }
+
+    /* .ListContent_title{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 8px;
+        height: 35px;
+        margin-bottom: 10px;
+    
+    }
+
+    
     
     .ListContent_tag{
-        width: 60px;
+        min-width: 60px;
         height: 25px;
         border-radius: 15px;
         background-color: var(--vYellow);
@@ -1036,7 +1206,7 @@
     }
 
     .ListContent_Detail{
-    
+        background-color: pink;
         display: flex;
         align-content: center;
         flex-direction: column;
@@ -1093,7 +1263,7 @@
         left: -22px;
         background-image: url('../images/icon/click.svg');
         background-size: contain;
-    }
+    } */
 
 
    

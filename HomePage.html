@@ -252,18 +252,17 @@
                                 <div class="search_filterRegion">
                                     <h2>地區/縣市</h2>
 
-                                    <select name="filterRegion" id="">
-                                        <option value="離島地區">離島地區</option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
+                                    <select name="filterRegion" id="filterRegion">
+                                        <option value="">選擇地區</option>
+                                        <option value="north">北部地區</option>
+                                        <option value="middle">中部區域</option>
+                                        <option value="south">南部區域</option>
+                                        <option value="east">東部區域</option>
+                                        <option value="outside">離島地區</option>
                                     </select>
 
-                                    <select name="filterCity" id="">
-                                        <option value="全部">全部</option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
+                                    <select name="filterCity" id="filterCity">
+                                        <option value="">選擇城市</option>
                                     </select>
 
                                 </div>
@@ -275,7 +274,7 @@
 
                                         <label class="filterCate">
 
-                                            <input type="radio" name="filterCate">
+                                            <input type="radio" name="filterCate" checked>
                                             <h4>全部</h4>
                                         </label>
                                         <label class="filterCate">
@@ -339,25 +338,26 @@
                                 <button class="listSort_btn">熱門度</button>
                             </div>
 
-                            <div class="SearchList_warp">
+                            <div class="SearchList_warp" id="SearchList_warp">
                                 <!-- 景點結果頁面載入... -->
 
                                 <div class="SearchList">
                                     <div class="ListPic">
-                                        <img src="./static/images/food/food(11).jpg" alt="">
+                                       
                                     </div>
 
                                     <div class="ListContent">
 
                                         <div class="ListContent_top">
+                                            
                                             <div class="ListContent_title">
 
                                                 <div class="ListContent_name">
-                                                    <h1>紫坪</h1>
+                                                    <h1>大稻埕碼頭_大稻埕碼頭貨櫃市集</h1>
                                                 </div>
 
                                                 <div class="ListContent_tag">
-                                                    自然風景
+                                                    國家風景區
                                                 </div>
                                             </div>
 
@@ -706,7 +706,29 @@
 
 
 
-                    </div>    
+                    </div>  
+                    
+                    <div class="ViewPagination_warp">
+
+                        <div class="ViewPagination" id="ViewPagination">
+                            <div class="ptn ptnPrev"></div>
+                            <div class="ptn_warp">
+
+                                <!-- <div class="ptn ptn_active">1</div>
+                                <div class="ptn">2</div>
+                                <div class="ptn">3</div>
+                                
+                                <div class="ptn">4</div>
+                                <div class="ptn">5</div> -->
+                    
+                    
+                            </div>
+                            
+                            <div class="ptn ptnNext"></div>
+                        </div>
+                        
+
+                    </div>
 
 
                 </div>

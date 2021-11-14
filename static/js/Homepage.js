@@ -1,12 +1,29 @@
+//／／／／篩選內容///////////
+
+$('#filterRegion').change(function(){
 
 
+  // console.log('hi');
+  const SelectedRegion = $(this).children('option:selected').val()
+
+
+  $('#filterCity').html(CitySelect(SelectedRegion))
+
+  RegionOption = SelectedRegion
+  
+
+})
+
+
+
+//////////////////// 熱門輪播牆//////////////////////
 let num = 0;
 
 let indexNum = 1;
 
 let maxlength = $(".hotViewBox:first").children(".hotView_pic").length;
 
-//////////////////// 熱門輪播牆//////////////////////
+
 // 電腦版
 if ($(window).width() > 768) {
   $(".hotViewBox").each(function () {

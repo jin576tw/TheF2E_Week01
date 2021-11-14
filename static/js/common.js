@@ -1,4 +1,3 @@
-
 // 使用api
 function getAuthorizationHeader() {
   //  填入自己 ID、KEY 開始
@@ -19,17 +18,666 @@ function getAuthorizationHeader() {
   return { Authorization: Authorization, "X-Date": GMTString };
 }
 
-getAuthorizationHeader()
+// getAuthorizationHeader()
 
 
-let nowPage = ''
-let nowTIME = new Date('2016-05-10').getDate()
+////////////////////////////////////////////////////////////////////
 
-
-
-
-console.log(nowTIME);
+// let nowPage = ''
+// let nowTIME = new Date('2016-05-10').getDate()
 
 
 
 
+// console.log(nowTIME);
+
+
+let RegionOption = ``
+let CityOption = ``
+
+// 台灣選單function
+function CitySelect(region){
+
+
+  if(region == 'north'){
+
+    return `<option value="">選擇城市</option>
+            <option value="Taipei">臺北市</option>
+            <option value="NewTaipei">新北市</option>
+            <option value="Keelung">基隆市</option>
+            <option value="Taoyuan">桃園市</option>
+            <option value="Hsinchu">新竹市</option>
+            <option value="HsinchuCounty">新竹縣</option>
+            <option value="YilanCounty">宜蘭縣</option>`
+
+  }else if(region == 'middle'){
+
+    return `
+            <option value="">選擇城市</option>
+            <option value="Taichung">臺中市</option>
+            <option value="MiaoliCounty">苗栗縣</option>
+            <option value="ChanghuaCounty">彰化縣</option>
+            <option value="NantouCounty">南投縣</option>
+            <option value="YunlinCounty">雲林縣</option>`
+
+  }else if(region == 'south'){
+
+    return `<option value="">選擇城市</option>
+            <option value="Tainan">臺南市</option>
+            <option value="Kaohsiung">高雄市</option>
+            <option value="ChiayiCounty">嘉義縣</option>
+            <option value="Chiayi">嘉義市</option>
+            <option value="PingtungCounty">屏東縣</option>`
+           
+
+  }else if(region == 'east'){
+
+    return `
+            <option value="">選擇城市</option>
+            <option value="HualienCounty">花蓮縣</option>
+            <option value="TaitungCounty">臺東縣</option>`
+
+  }else if(region == 'outside'){
+
+    return `
+            <option value="">選擇城市</option>
+            <option value="KinmenCounty">金門縣</option>
+            <option value="PenghuCounty">澎湖縣</option>
+            <option value="LienchiangCounty">連江縣</option>
+            `
+
+  }
+
+
+
+}
+
+
+// 文字超過字數
+const OverTitle = (p,len) =>{
+
+  // const len = 60
+
+  if(p.length > len){
+
+      let newTitle = p.substring(0,len-1)+"..."
+
+      return newTitle
+
+  }else{
+
+      return p
+
+  }
+
+}
+
+//要顯示在畫面上的資料數量，預設每一頁只顯示幾筆資料。
+//顯示當前頁數
+function pagination(data ,perpage,nowPage) {
+
+  // 取得全部資料長度
+  const dataTotal = data.length;
+
+
+  // page 按鈕總數量公式 總資料數量 / 每一頁要顯示的資料
+  // 這邊要注意，因為有可能會出現餘數，所以要無條件進位。
+  const pageTotal = Math.ceil(dataTotal / perpage);
+
+
+
+  // 顯示頁碼
+  // 頁碼狀態判斷
+  function pageNum(index){
+
+      if(index == nowPage){
+
+        let ptn =  `<div class="ptn ptn_active" value="${index}">${index}</div>`
+        return ptn
+
+      }else{
+
+
+        let ptn = `<div class="ptn" value="${index}">${index}</div>`
+
+        return ptn
+
+      }
+
+
+  }
+
+
+  const firstPage = pageNum(1)
+  const EndPage = pageNum(pageTotal)
+
+
+  function morePage(index){
+
+    let moreBtn = `<div class="ptn" value="${index}" disabled>...</div>`
+
+    
+    return moreBtn
+  }
+
+
+  let ptnStr =``
+
+  // 總頁數小於等5時正常顯示頁碼
+  if(pageTotal <= 5){
+
+    for(let i = 1 ; i < pageTotal+1  ;i++){ 
+
+      ptnStr += pageNum(i)
+
+      
+      $('.ptn_warp').html(ptnStr)
+
+      
+    }
+
+
+  // 總頁數大於等5時正常隱藏頁碼
+  }else{
+
+
+    for(let i = 1 ; i < pageTotal+1  ;i++){ 
+
+      // 前三頁頁碼狀態
+      if(nowPage < 4){
+
+
+        ptnStr = pageNum(1)+pageNum(2)+pageNum(3)+morePage(pageTotal-1)+EndPage
+
+        $('#ViewPagination').children('.ptn_warp').html(ptnStr)
+
+
+        // 後三頁頁碼狀態
+      }else if (nowPage > pageTotal - 3 ){
+
+
+        ptnStr = firstPage+morePage(pageTotal - 3)+pageNum(pageTotal - 2)+pageNum(pageTotal - 1)+EndPage
+
+
+        $('#ViewPagination').children('.ptn_warp').html(ptnStr)
+
+        
+      // 其他分頁頁碼狀態
+      }else if( nowPage === i){
+
+        ptnStr = firstPage+morePage(i-1)+pageNum(i)+morePage(i+1)+EndPage
+
+
+        $('#ViewPagination').children('.ptn_warp').html(ptnStr)
+
+
+
+      }
+
+
+    }
+
+
+  }
+  
+  
+
+
+  // 當"當前頁數"比"總頁數"大的時候，"當前頁數"就等於"總頁數"
+  if (nowPage > pageTotal) {
+
+      nowPage = pageTotal;
+
+  }
+
+  // 當前頁數最小index
+  const minData = (nowPage * perpage) - perpage + 1 ;
+
+  // 當前頁數最大index
+  const maxData = (nowPage * perpage) ;
+
+
+  // 先建立新陣列
+  const Newdata = [];
+
+  // 使用 ES6 forEach 做資料處理
+  // 這邊必須使用索引來判斷資料位子，所以要使用 index
+  data.forEach((item, index) => {
+
+      // 獲取陣列索引，但因為索引是從 0 開始所以要 +1。
+      const num = index + 1;
+
+      // 這邊判斷式會稍微複雜一點
+      // 當 num 比 minData 大且又小於 maxData 就push進去新陣列。
+      if ( num >= minData && num <= maxData) {
+          Newdata.push(item);
+      }
+
+
+
+  })
+
+  // 判斷有無標籤
+  function EmptyTag(tag){
+
+    if(tag == '' || tag == null){
+
+      return ``
+
+    }else{
+
+      return `<div class="ListContent_tag">
+              ${tag}
+              </div>`
+
+    }
+
+
+  }
+
+  function EmptyPic(pic,descript){
+
+    if(pic == null || descript==null){
+
+      return ``
+
+    }else{
+
+      return ` <img src="${pic}" alt="${descript }">`
+    }
+  }
+
+  function EmptyTimeOpen(OpenTime){
+
+    if(OpenTime == null){
+      
+      
+      return ``
+
+
+    }else{
+
+      return `
+      <div class="ListContent_time">
+      <h4>${OverTitle(OpenTime,12)}</h4>
+      </div>`
+
+    }
+
+
+  }
+
+  // 從新陣列輸出物件
+  let itemStr =``
+  for (let i = 0; i < Newdata.length; i++) {
+      let item = `
+      <div class="SearchList" id="${Newdata[i].ID}">
+          <div class="ListPic">`
+          +EmptyPic(Newdata[i].Picture.PictureUrl1,Newdata[i].Picture. PictureDescription1)+`</div>
+
+          <div class="ListContent">
+
+              <div class="ListContent_top">
+                  <div class="ListContent_title">
+
+                      <div class="ListContent_name">
+                          <h1>${Newdata[i].Name}</h1>
+                      </div>`+EmptyTag(Newdata[i].Class1)+
+                  `</div>
+
+
+                  <div class="ListContent_intro">
+                      <p>${OverTitle(Newdata[i].DescriptionDetail,60)}</p>
+                  </div>
+              </div>
+
+              <div class="ListContent_bottom">
+
+                  <div class="ListContent_Detail">
+
+                      <div class="ListContent_location">
+                          <h4>${Newdata[i].City}</h4>
+                      </div>`+
+                     
+                      EmptyTimeOpen(Newdata[i].OpenTime)
+                         
+                      +
+
+                     
+
+                  `</div> 
+                  <div class="ListContent_count">
+                      <h5>1293</h5>
+                  </div>
+
+
+
+
+              </div>
+
+          </div>
+
+      </div>`;
+
+      itemStr+=item
+
+  
+
+
+}
+
+$("#SearchList_warp").html(itemStr);
+
+console.log(`全部資料:${dataTotal} 每一頁顯示:${perpage}筆 總頁數:${pageTotal} 當前頁數:${nowPage}`);
+
+
+
+console.log("NewArr", Newdata);
+
+
+}
+
+
+
+
+
+// 旅遊情報選單
+// 地區選擇
+$('#region').change(function(){
+
+
+  const SelectedRegion = $(this).children('option:selected').val()
+
+
+  $('#city').html(CitySelect(SelectedRegion))
+
+  RegionOption = SelectedRegion
+  
+
+})
+
+// 城市選擇
+$('#city').change(function(){
+
+
+  const SelectedCity =  $(this).children('option:selected').val()
+
+  CityOption = SelectedCity
+
+  
+
+})
+
+
+// 旅遊情報搜尋
+$('.search_btn').click(function(){
+
+
+  if(RegionOption == '' || CityOption == ''){
+
+    alert('請輸入地區/城市')
+
+  }else{
+
+    console.log(RegionOption,CityOption);
+
+
+    ////////////轉場景點查詢///////////
+
+    $('.ViewIntro').fadeOut(500)
+    $('.ViewPage').fadeIn(900)
+
+    // 因有延遲，過一秒後計算高度
+    setTimeout(() => {
+
+      const Size = $('.HomePage').outerHeight()
+
+      $('.Content').css('height',Size)
+  
+       
+    },900)
+
+    $('.Content_row').css('transform','translateX(-100%)')
+
+    $('.Navbar').css('background-color','var(--light_blue)')
+
+    $('.navbarItems li').css('color','white').css('transition','0.5s')
+    $('.navbarLogo h2').css('color','white').css('transition','0.5s')
+
+    $('.icon_bar').removeClass('dark')
+
+  
+    $('.HomePage').css('opacity','1')
+    
+
+
+
+    ///////// 顯示篩選內容/////////////
+    // 篩選地區
+    $('#filterRegion').children('option').each(function(){
+
+
+      let OptionValue = $(this).val()
+
+      if(OptionValue == RegionOption){
+
+
+        $(this).prop('selected',true)
+      }
+
+
+  
+
+    })
+
+    // 篩選城市
+    $('#filterCity').html(CitySelect(RegionOption))
+
+    $('#filterCity').children('option').each(function(){
+
+      let OptionValue = $(this).val()
+
+      if(OptionValue == CityOption){
+
+
+        $(this).prop('selected',true)
+      }
+
+
+   })
+
+
+   let tpx = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${CityOption}?$format=JSON`
+
+
+
+  axios.get(
+    `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${CityOption}?$format=JSON`,
+  {
+      headers: getAuthorizationHeader()
+  }
+  )
+  .then(function (response) {
+
+
+    const thisData = response.data;
+
+    // 選擇一頁幾筆資料
+    const per = 7
+
+    // 分頁初始值第一頁
+    pagination(thisData, per, 1)
+
+
+    // 選擇頁數
+    $('.ptn_warp').on('click','.ptn',function(){
+
+
+      let nowPage = parseInt($(this).attr('value'))
+
+      pagination(thisData, per,nowPage)
+
+
+
+    })
+
+
+
+
+    $('.ptnPrev').click(function(){
+
+
+
+        let nowPage = parseInt($('.ptn_active').attr('value'))
+        console.log(nowPage);
+
+
+        if(nowPage == 1){
+
+
+          $(this).css('opacity','0.3').attr('disabled', true);
+       
+
+        }else{
+
+          $(this).attr('disabled', false);
+
+          pagination(thisData, per,nowPage-1)
+
+        }
+   
+    
+
+    })
+
+
+    $('.ptnNext').click(function(){
+
+      const maxPage =  Math.ceil(thisData.length / per);
+
+      console.log(maxPage);
+
+      let nowPage = parseInt($('.ptn_active').attr('value'))
+
+      console.log(nowPage);
+
+      if(nowPage == maxPage){
+
+
+        $(this).css('opacity','0.3').attr('disabled', true);
+
+      }else{
+
+        $(this).attr('disabled', false);
+
+        pagination(thisData, per, nowPage+1)
+
+      }
+
+
+    })
+
+
+
+
+
+  })
+  .catch(function (error) {
+    console.log(error);
+  }); 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+    let url = location.pathname + '?HomePage'
+    history.pushState({
+      url: url,
+      title: document.title
+    }, document.title, url)
+
+    
+
+    $("html, body").animate({ 
+
+        scrollTop: 0
+
+    }, 1 ,'swing');
+
+  }
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+// if(HomePage){
+
+
+  // $('.Content_row').css('transform','translateX(-100%)')
+
+  
+// }
+  // $('.navbarItems li').css('color','white').css('transition','0.5s')
+  // $('.navbarLogo h2').css('color','white').css('transition','0.5s')
+
+  // $('.icon_bar').removeClass('dark')
+
+
+  // $('.HomePage').css('opacity','1')
+
+
+// }
+
+
+// if(HomePage){
+
+  // $('.ViewIntro').fadeOut(500)
+  // $('.ViewPage').fadeIn(900)
+
+  //  // 因有延遲，過一秒後計算高度
+  //  setTimeout(() => {
+
+  //   const Size = $('.HomePage').outerHeight()
+
+
+  //   // console.log(Size);
+
+  //   $('.Content').css('height',Size)
+
+   
+  // },900)
+
+
+  // $('.Content_row').css('transform','translateX(-100%)')
+
+  // $('.Navbar').css('background-color','var(--light_blue)')
+
+  // $('.navbarItems li').css('color','white').css('transition','0.5s')
+  // $('.navbarLogo h2').css('color','white').css('transition','0.5s')
+
+  // 
+
+
+  // $('.HomePage').css('opacity','1')
+
+
+// }
+// console.log(HotelPage );
