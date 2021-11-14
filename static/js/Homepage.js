@@ -1,4 +1,5 @@
 /////////////////////////分頁//////////////////////////
+
 // 選擇頁數
 $('.ptn_warp').on('click','.ptn',function(){
 
@@ -335,6 +336,88 @@ $('.SearchBtn').click(function(){
 
 
 //////////////////// 熱門輪播牆//////////////////////
+
+let HotViewArr = [] ;
+
+
+// 載入所有景點
+axios.get(
+  HotView_TPXUrl,
+  {
+     headers: getAuthorizationHeader()
+  }
+ )
+ .then(function (response) {
+
+
+  const HotViewData = response.data; 
+
+  // 30筆隨機抓取五筆
+  randomHotPic(5,HotViewData,HotViewArr)
+
+
+  let HotArr = ``
+
+  for(let i = 0 ; i <HotViewArr.length  ;i++){ 
+
+
+     // 景點圖片
+    function EmptyPic(hot){
+
+      if(hot.Picture.PictureUrl1 ==null){
+
+        return ``
+
+
+      }else{
+
+        return  `<img src="${hot.Picture.PictureUrl1}" alt="${hot.Picture. PictureDescription1}">`
+
+      }
+
+    }
+
+
+
+
+    let hotView_pic =`<div class="hotView_pic" id="${HotViewArr[i].ID}">`
+                        +EmptyPic(HotViewArr[i])+
+
+
+                        `<div class="hotViewDetail">
+                          
+                            <div class="clickCount">
+                                <h5>${ClickCount()}</h5>
+                            </div>
+                            <div class="hotViewName">
+                                <h4>${HotViewArr[i].Name}</h4>
+                                <h4>看更多</h4>
+
+                            </div>
+
+                            
+                        </div>
+                    </div> `
+
+    HotArr+=hotView_pic
+
+  }
+
+  let hotViewBox = `<div class="hotViewBox">`+HotArr+`</div>`
+
+
+
+  $('#hotView_row').html(hotViewBox+hotViewBox)
+ 
+ })
+
+
+ .catch(function (error) {
+   console.log(error);
+ }); 
+
+
+
 let num = 0;
 
 let indexNum = 1;
@@ -511,27 +594,64 @@ $('.hotView_row').on('click','.hotView_pic',function(){
   $('.ViewPage').fadeOut(500)
 
 
-  $('.ViewIntro').fadeIn(900)
+    $('.ViewIntro').fadeIn(1000)
 
 
-  // 因有延遲，過一秒後計算高度
-  setTimeout(() => {
+    // 因有延遲，過一秒後計算高度
+    setTimeout(() => {
 
-    const Size = $('.HomePage').outerHeight()
+      const Size = $('.HomePage').outerHeight()
 
+      $('.Content').css('height',Size)
 
-    // console.log(Size);
+     
+    },900)
+  
 
-    $('.Content').css('height',Size)
-
-   
-  },900)
-    
-
+  
+    const VID =  $(this).attr('id')
 
 
     $('.Title_line').css('height','100%')
 
+
+    let url = location.pathname + `?ViewIntro&&result=${VID}`
+
+     history.pushState({
+      url: url,
+      title: document.title
+    }, document.title, url)
+
+
+    console.log( Result_TPXUrl(VID));
+    
+    axios.get(
+      Result_TPXUrl(VID),
+      {
+         headers: getAuthorizationHeader()
+      }
+     )
+     .then(function (response) {
+    
+    
+      TPXData = response.data; 
+
+      ResultOutput(TPXData[0])
+
+      
+
+     
+    
+   
+     
+     })
+     .catch(function (error) {
+       console.log(error);
+     })
+
+
+
+      
     $("html, body").animate({ 
 
       scrollTop: 0
@@ -539,6 +659,7 @@ $('.hotView_row').on('click','.hotView_pic',function(){
   }, 1 ,'swing');
 
 })
+
 
 $('.SearchList_warp').on('click','.SearchList',function(){
 
@@ -554,9 +675,6 @@ $('.SearchList_warp').on('click','.SearchList',function(){
 
       const Size = $('.HomePage').outerHeight()
 
-
-      // console.log(Size);
-
       $('.Content').css('height',Size)
 
      
@@ -564,10 +682,48 @@ $('.SearchList_warp').on('click','.SearchList',function(){
   
 
   
+    const VID =  $(this).attr('id')
+
 
     $('.Title_line').css('height','100%')
 
+
+    let url = location.pathname + `?ViewIntro&&result=${VID}`
+
+     history.pushState({
+      url: url,
+      title: document.title
+    }, document.title, url)
+
+
+    console.log( Result_TPXUrl(VID));
     
+    axios.get(
+      Result_TPXUrl(VID),
+      {
+         headers: getAuthorizationHeader()
+      }
+     )
+     .then(function (response) {
+    
+    
+      TPXData = response.data; 
+
+      ResultOutput(TPXData[0])
+
+      
+
+     
+    
+   
+     
+     })
+     .catch(function (error) {
+       console.log(error);
+     })
+
+
+
       
     $("html, body").animate({ 
 

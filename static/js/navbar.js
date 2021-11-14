@@ -33,6 +33,7 @@ $('.navbarRWD').click(function(){
 // 旅遊情報
 $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').click(function(){
 
+    OriginNav()
 
     $('.Content').css('height','100vh')
 
@@ -41,7 +42,7 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
     $('.navbarLogo h2').css('color','white').css('transition','0.5s')
 
     $('.HomePage').css('opacity','0')
-
+    
 
     $('.Navbar').css('background-color','transparent')
     $('.icon_bar').removeClass('dark')
@@ -80,10 +81,12 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
 })
 
 // 首頁
-$('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4').click(function(){
+$('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2)').click(function(){
 
     $('.ViewIntro').fadeOut(500)
     $('.ViewPage').fadeIn(1000)
+
+    OriginNav()
 
     // 因有延遲，過一秒後計算高度
     setTimeout(() => {
@@ -133,7 +136,7 @@ $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4')
 $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function(){
 
 
-
+    OriginNav()
     const Size = $('#Food_page').children('.footer').offset().top+50
 
     $('.Content').css('height',Size)
@@ -185,7 +188,7 @@ $('.navbarItems li:nth-of-type(3),.RWDItems li:nth-of-type(3)').click(function()
 // 住宿資訊頁
 $('.navbarItems li:nth-of-type(4),.RWDItems li:nth-of-type(4)').click(function(){
 
-
+    OriginNav()
 
    const Size = $('#Hotel_page').children('.footer').offset().top+50
 

@@ -39,13 +39,14 @@ let TPX_CityUrl = (city) =>{
 
 }
 
+// 篩選景點
 let  Filter_TPXUrl = (city,cate) =>{
 
   return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$filter=contains(Class1,'${cate}')&$format=JSON`
 
 }
 
-
+// 搜尋景點
 let Key_TPXUrl  = (key) =>{
 
   return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(Name,'${key}')&$format=JSON`
@@ -53,10 +54,24 @@ let Key_TPXUrl  = (key) =>{
 
 }
 
-const ALL_TPXUrl  = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$format=JSON`
+// 單一景點
+let Result_TPXUrl = (id) =>{
+
+  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/?$filter=contains(ID,'${id}')&$top=1&$format=JSON`
+
+}
+
+// 全部景點(500筆)
+const ALL_TPXUrl  = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$top=500&$format=JSON`
+
+// 熱門景點(ID高到底50筆)
+const HotView_TPXUrl = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$orderby=ID%20asc&$top=50&$format=JSON`
+
 
 let RegionOption = ``
 let CityOption = ``
+
+let ViewPosition =``
 
 // 台灣選單function
 function CitySelect(region){
@@ -135,8 +150,65 @@ const OverTitle = (p,len) =>{
 
 }
 
+// 隨機產生點擊次數1500~100數字內
+function ClickCount(){
+
+  return Math.floor(Math.random()*(1500-100))+100;
+
+}
+
+// 隨機產生熱門景點圖片
+function randomHotPic(num,p,rp){
+
+  let newArr = []
+
+  // 先抓還有庫存的商品  
+  for(let i = 0 ; i < p.length ;i++){  
+
+      if(p[i].left != 0 || typeof p[i].left != 'number'){
 
 
+          newArr.push(p[i])
+          
+  
+      }
+
+  }
+
+  // 在抓指定數目的亂數
+  for(let j = 0 ; j < num ; j++){ 
+
+      let ran = Math.floor(Math.random() * (newArr.length - j)); 
+
+      if(rp.includes(newArr[ran]) ){ 
+          continue; 
+      } 
+
+      rp.push(newArr[ran]); 
+
+      newArr[ran] = newArr[newArr.length - j - 1];     
+      
+
+  }
+
+  return rp
+
+}
+
+function OriginNav(){
+
+  let NavPage = `<div class="pageNav_item">
+                      <h4>景點查詢</h4>
+                  </div>
+                 `
+
+
+  $('#pageNav').html(NavPage)
+
+}
+
+
+// console.log( ClickCount());
 
 
 /////////////////////////分頁載入//////////////////////////
@@ -408,7 +480,7 @@ function pagination(data ,perpage,nowPage) {
 
                   `</div> 
                   <div class="ListContent_count">
-                      <h5>1293</h5>
+                      <h5> ${ClickCount()}</h5>
                   </div>
 
 
@@ -429,9 +501,11 @@ function pagination(data ,perpage,nowPage) {
 
 $("#SearchList_warp").html(itemStr);
 
-console.log(`全部資料:${dataTotal} 每一頁顯示:${perpage}筆 總頁數:${pageTotal} 當前頁數:${nowPage}`);
+// console.log(`全部資料:${dataTotal} 每一頁顯示:${perpage}筆 總頁數:${pageTotal} 當前頁數:${nowPage}`);
 
-console.log("NewArr", Newdata.length);
+// console.log("NewArr", Newdata);
+
+
 
 
 
@@ -439,7 +513,146 @@ console.log("NewArr", Newdata.length);
 
 }
 
+// 景點完整介紹
+function ResultOutput(data){
 
+  let d = data
+
+  let NavPage = `<div class="pageNav_item">
+                      <h4>景點查詢</h4>
+                  </div>
+                  <div class="pageNav_item">
+                      <h4>${d.Name}</h4>
+                  </div>`
+
+
+  $('#pageNav').html(NavPage)          
+  
+  // 景點名稱/標籤/點擊次數
+  function ViewTitle(view){
+
+    if(view.Class1 == null){
+
+      return `<h1>${view.Name}</h1>
+      <div class="ViewIntro_click">
+          <h5>${ClickCount()}</h5>
+      </div>`
+    
+    }else{
+
+      return `<h1>${view.Name}</h1>
+      <div class="ViewIntro_tag">${view.Class1}</div>
+      <div class="ViewIntro_click">
+          <h5>${ClickCount()}</h5>
+      </div>
+      `
+
+    }
+
+    
+    
+  }
+
+  $('.ViewIntro_title').html(ViewTitle(d))
+
+
+  // 景點位置
+  function ViewLocation(view){
+
+    if(view.Address == null ){
+
+
+      ViewPosition == view.City.substr(0,3)
+
+      
+
+      return view.City
+
+      
+    }else{
+
+
+
+      return view.Address.substr(0,9)
+    }
+
+
+  }
+
+  ViewPosition = ViewLocation(d).substr(0,3)
+
+  console.log(ViewPosition);
+
+  // 景點聯絡號碼
+  $('#View_location h4').text(ViewLocation(d))
+
+  function ViewContact(view){
+
+      return `<a href="tel:+${view.Phone}">
+                  <h4>+${view.Phone}</h4>
+              </a> `
+  }
+
+  $('#View_phone').html(ViewContact(d))
+
+
+
+  // 景點交通資訊
+  $('#View_openTime h4').text(d.OpenTime)
+  
+  // 景點交通資訊
+  $('#View_park h4').text(d.TravelInfo)
+
+
+  // 景點網站連結
+  function ViewWebsite(view){
+
+    if(view.WebsiteUrl == null){
+      return `<h4 class="nolink">官方網站</h4>`  
+
+    }else{
+
+
+      return `<a href="${d.WebsiteUrl}">
+                  <h4>官方網站</h4>
+              </a>`
+    }
+
+  }
+
+  $('#View_link').html(ViewWebsite(d))
+
+
+
+  // 景點文字介紹
+  $('#ViewIntro_contentText p').text(d.Description)
+
+
+  // 景點圖片
+  function ViewPic(view){
+
+    if(view.Picture.PictureUrl1 ==null){
+
+      return `<div class="ViewIntro_Pic"></div>`
+
+
+    }else{
+
+      return  `<div class="ViewIntro_Pic">
+                  <img src="${d.Picture.PictureUrl1}" alt="${d.Picture.PictureDescription1}">
+              </div>`
+
+    }
+
+  }
+  
+
+  $('.ViewIntro_PicRow').html(ViewPic(d))
+
+
+
+
+}
 
 // 旅遊情報選單
 // 地區選擇

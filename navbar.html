@@ -87,6 +87,10 @@
     const FoodPage = location.href.substr(-9,9) == '?FoodPage'
     const HotelPage = location.href.substr(-10,10) == '?HotelPage'
 
+    const ViewIntro = location.href.substr(-39,10) == '?ViewIntro' 
+
+
+
 
     setTimeout(() => {
 
@@ -124,6 +128,10 @@
         $('.HomePage').css('opacity','1')
 
         $('.icon_bar').removeClass('dark')
+
+        $('.ViewPage').show()
+
+        $('.ViewIntro').hide()
 
         setTimeout(() => {
 
@@ -199,6 +207,75 @@
 
         
 
+    }
+
+    if(ViewIntro){
+
+        $('.Navbar').css('background-color','var(--light_blue)')
+
+        $('.Content_row').css('transform','translateX(-100%)')
+
+        $('.navbarItems li').css('color','white').css('transition','0.5s')
+        $('.navbarLogo h2').css('color','white').css('transition','0.5s')
+
+        $('.HomePage').css('opacity','1')
+
+        
+
+        $('.icon_bar').removeClass('dark')
+
+        $('.ViewPage').hide()
+
+        $('.ViewIntro').fadeIn(1000)
+
+
+
+        $('.Title_line').css('height','100%')
+
+        const VID = location.href.substr(-20,20)
+
+
+        axios.get(
+
+        Result_TPXUrl(VID),
+        {
+            headers: getAuthorizationHeader()
+        }
+        )
+        .then(function (response) {
+
+
+        TPXData = response.data; 
+
+        ResultOutput(TPXData[0])
+
+        
+
+        
+
+
+        
+        })
+        .catch(function (error) {
+        console.log(error);
+        })
+
+
+
+
+        setTimeout(() => {
+
+
+            const Size = $('.HomePage').outerHeight()
+
+            $('.Content').css('height',Size)
+
+
+
+        }, 600);
+
+    
+        
     }
 
 

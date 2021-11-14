@@ -55,6 +55,22 @@
 
 }
 
+.pageNav_item:first-child{
+    color: var(--vblack) !important; 
+}
+.pageNav_item:first-child::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    right: -25px;
+    top: 0;
+    background-image: url('../images/icon/right-arrow.png') !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .pageNav_item:last-child{
     color: var(--light_blue);
 }
@@ -143,6 +159,10 @@
     transition: 0.8s;
     border-radius: 20px;
     background-color: var(--vGrey);
+    background-image: url('../images/taiwan_logo_white.svg');
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
    
 }
@@ -1318,7 +1338,7 @@
 
 .ViewIntro_tag{
     cursor: pointer;
-    width: 75px;
+    width: 80px;
     height: 30px;
     background-color: var(--vYellow);
     display: flex;
@@ -1397,7 +1417,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .detail_list h4{
@@ -1421,6 +1441,10 @@
     background-repeat: no-repeat;
 
 
+}
+
+.nolink{
+    color: var(--vGrey) !important;
 }
 
 #View_location::before{
@@ -1525,11 +1549,16 @@
     height: 100%;
     top: 0;
     left: 0;
-    transform: translateX(-660px);
+
     
 }
 
 .ViewIntro_Pic{
+    background-color: var(--vGrey);
+    background-image: url('../images/taiwan_logo_white.svg');
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
     width: 660px;
     height: 100%;
 }
