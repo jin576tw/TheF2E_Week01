@@ -1,7 +1,7 @@
 /* ///////////////景點查詢頁////////////////*/
 
 .HomePage{
-    /* opacity: 0; */
+    opacity: 0;
     transition: 0.8s;
     padding-top: 75px;
     width: 100%;
@@ -917,6 +917,9 @@
     align-items: center;
 }
 
+.ListContent_intro{
+    min-height: 25px;
+}
 .ListContent_intro p{
     font-size: 1.6rem;
     color:  var(--vblack);
@@ -924,6 +927,7 @@
 }
 
 .ListContent_bottom{
+    min-height: 20px;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -934,7 +938,6 @@
 }
 
 .ListContent_Detail{
-    
     display: flex;
     align-content: center;
 }
@@ -978,7 +981,7 @@
 }
 
 .ListContent_count{
-    
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -987,6 +990,7 @@
 }
 
 .ListContent_count h5{
+
     position: relative;
     font-size: 1.6rem;
     font-weight: 400;

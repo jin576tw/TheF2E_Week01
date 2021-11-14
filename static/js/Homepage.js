@@ -1,4 +1,35 @@
 /////////////////////////分頁//////////////////////////
+// 選擇頁數
+$('.ptn_warp').on('click','.ptn',function(){
+
+
+  let nowPage = parseInt($(this).attr('value'))
+
+  pagination(TPXData, per, nowPage)
+
+
+  setTimeout(() => {
+
+
+    const Size = $('.HomePage').outerHeight()
+
+    $('.Content').css('height',Size)
+
+
+
+  }, 600);
+
+  $("html, body").animate({ 
+
+    scrollTop: $('#ViewPage_Content').offset().top 
+
+  }, 1 ,'swing');
+
+
+
+
+})
+
 // 分頁上一頁按鈕
 $('.ptnPrev').click(function(){
 
@@ -84,6 +115,27 @@ $('.ptnNext').click(function(){
 
 })
 
+
+// 載入所有景點
+axios.get(
+  ALL_TPXUrl,
+  {
+     headers: getAuthorizationHeader()
+  }
+ )
+ .then(function (response) {
+
+
+  TPXData = response.data; 
+
+  // 分頁初始值第一頁
+  pagination(TPXData, per, 1)
+ 
+ })
+ .catch(function (error) {
+   console.log(error);
+ }); 
+
 /////////////////////////篩選內容/////////////////////////
 
 $('#filterRegion').change(function(){
@@ -96,18 +148,189 @@ $('#filterRegion').change(function(){
   $('#filterCity').html(CitySelect(SelectedRegion))
 
   RegionOption = SelectedRegion
+
+ 
   
 
 })
 
+$('#filterCity').change(function(){
+  
+  
+  const SelectedCity = $(this).children('option:selected').val()
 
+  CityOption = SelectedCity
+
+
+  console.log(CityOption,RegionOption);
+  // alert(CityOption,RegionOption)
+
+})
+
+// 篩選內容篩選
 $('.filterBtn').click(function(){
 
-  console.log(TPXData );
+  let isPass = true
+
+  let SelectedCate = $('input[name="filterCate"]:checked').val()
+
+
+  if(CityOption == '' || RegionOption == ''){
+
+    isPass == false
+    alert('請選擇區域/城市')
+
+
+  }else{
+
+    // 全部類別
+    if(SelectedCate == ''){
+
+      axios.get(
+
+        TPX_CityUrl(CityOption),
+  
+      {
+          headers: getAuthorizationHeader()
+      }
+      )
+      .then(function (response) {
+  
+  
+        TPXData = response.data;
+  
+        // 分頁初始值第一頁
+        pagination(TPXData, per, 1)
+  
+  
+        
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+
+    }else{
+
+      axios.get(
+
+        Filter_TPXUrl(CityOption,SelectedCate),
+  
+      {
+          headers: getAuthorizationHeader()
+      }
+      )
+      .then(function (response) {
+  
+  
+        TPXData = response.data;
+
+
+      
+          // 分頁初始值第一頁
+          pagination(TPXData, per, 1)
+
+        
+
+  
+  
+        
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+  }
+
+
+  setTimeout(() => {
+
+
+    const Size = $('.HomePage').outerHeight()
+
+    $('.Content').css('height',Size)
+
+
+
+  }, 600);
+
+
+  $("html, body").animate({ 
+
+    scrollTop: 0
+
+  }, 1 ,'swing');
+
+
+
+  
+
+  
 })
 
 
+// 篩選內容搜尋
+$('.SearchBtn').click(function(){
 
+  let KeyWored = $('input[name="ViewSearch"]').val()
+  // console.log($('input[name="ViewSearch"]').val());
+
+  axios.get(
+
+    Key_TPXUrl(KeyWored),
+
+  {
+      headers: getAuthorizationHeader()
+  }
+  )
+  .then(function (response) {
+
+
+    TPXData = response.data;
+
+    // 分頁初始值第一頁
+    pagination(TPXData, per, 1)
+
+
+    
+  })
+  .catch(function (error) {
+    console.log(error);
+  }); 
+
+
+  setTimeout(() => {
+
+
+    const Size = $('.HomePage').outerHeight()
+
+    $('.Content').css('height',Size)
+
+
+
+  }, 600);
+
+  $("html, body").animate({ 
+
+    scrollTop: $('#ViewPage_Content').offset().top 
+
+  }, 1 ,'swing');
+  
+
+
+
+})
 
 
 

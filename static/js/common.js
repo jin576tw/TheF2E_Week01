@@ -33,6 +33,28 @@ function getAuthorizationHeader() {
 
 let TPXData = []
 
+// 城市tpx URL
+let TPX_CityUrl = (city) =>{
+  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$format=JSON`
+
+}
+
+let  Filter_TPXUrl = (city,cate) =>{
+
+  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$filter=contains(Class1,'${cate}')&$format=JSON`
+
+}
+
+
+let Key_TPXUrl  = (key) =>{
+
+  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(Name,'${key}')&$format=JSON`
+
+
+}
+
+const ALL_TPXUrl  = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$format=JSON`
+
 let RegionOption = ``
 let CityOption = ``
 
@@ -268,6 +290,16 @@ function pagination(data ,perpage,nowPage) {
 
   })
 
+  if(Newdata.length == 0){
+
+    alert('查無景點')
+    $('#ViewPagination').hide()
+  
+  }else{
+    $('#ViewPagination').show()
+
+  }
+
   // 判斷有無標籤
   function EmptyTag(tag){
 
@@ -399,20 +431,14 @@ $("#SearchList_warp").html(itemStr);
 
 console.log(`全部資料:${dataTotal} 每一頁顯示:${perpage}筆 總頁數:${pageTotal} 當前頁數:${nowPage}`);
 
+console.log("NewArr", Newdata.length);
 
 
-console.log("NewArr", Newdata);
+
 
 
 }
 
-
-
-// 城市tpx URL
-let TPX_CityUrl = (city) =>{
-  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$format=JSON`
-
-}
 
 
 // 旅遊情報選單
@@ -544,39 +570,7 @@ $('.search_btn').click(function(){
       pagination(TPXData, per, 1)
 
 
-      // 選擇頁數
-      $('.ptn_warp').on('click','.ptn',function(){
-
-
-        let nowPage = parseInt($(this).attr('value'))
-
-        pagination(TPXData, per, nowPage)
-
-
-        setTimeout(() => {
-
-
-          const Size = $('.HomePage').outerHeight()
-
-          $('.Content').css('height',Size)
-
-
-
-        }, 600);
-
-        $("html, body").animate({ 
-
-          scrollTop: $('#ViewPage_Content').offset().top 
-
-        }, 1 ,'swing');
-
-
-
-
-      })
-
-
-
+      
     })
     .catch(function (error) {
       console.log(error);

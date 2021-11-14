@@ -83,7 +83,7 @@ $('.navbarItems li:nth-of-type(1),.RWDItems li:nth-of-type(1),.navbarLogo').clic
 $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4').click(function(){
 
     $('.ViewIntro').fadeOut(500)
-    $('.ViewPage').fadeIn(900)
+    $('.ViewPage').fadeIn(1000)
 
     // 因有延遲，過一秒後計算高度
     setTimeout(() => {
@@ -96,7 +96,7 @@ $('.navbarItems li:nth-of-type(2),.RWDItems li:nth-of-type(2),.pageNav_item h4')
         $('.Content').css('height',Size)
   
        
-      },900)
+      },1000)
 
 
     $('.Content_row').css('transform','translateX(-100%)')
