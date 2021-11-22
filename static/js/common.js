@@ -35,21 +35,21 @@ let TPXData = []
 
 // 城市tpx URL
 let TPX_CityUrl = (city) =>{
-  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$format=JSON`
+  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$filter=Picture%2FPictureUrl1%20ne%20null&$format=JSON`
 
 }
 
 // 篩選景點
 let  Filter_TPXUrl = (city,cate) =>{
 
-  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$filter=contains(Class1,'${cate}')&$format=JSON`
+  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$filter=Picture%2FPictureUrl1%20ne%20null%20and%20contains(Class1,'${cate}')&$format=JSON`
 
 }
 
 // 搜尋景點
 let Key_TPXUrl  = (key) =>{
 
-  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(Name,'${key}')&$format=JSON`
+  return `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=Picture%2FPictureUrl1%20ne%20null%20and%20contains(Name,'${key}')&$format=JSON`
 
 
 }
@@ -62,10 +62,10 @@ let Result_TPXUrl = (id) =>{
 }
 
 // 全部景點(500筆)
-const ALL_TPXUrl  = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$top=500&$format=JSON`
+const ALL_TPXUrl  = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=Picture%2FPictureUrl1%20ne%20null&$top=500&$format=JSON`
 
 // 熱門景點(ID高到底50筆)
-const HotView_TPXUrl = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$orderby=ID%20asc&$top=50&$format=JSON`
+const HotView_TPXUrl = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=Picture%2FPictureUrl1%20ne%20null&$orderby=ID%20asc&$top=50&$format=JSON`
 
 
 let RegionOption = ``
